@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Archive Index",
+  "description": "Index of all daily reports for archive browsing",
+  "type": "object",
+  "required": ["updated_at", "total_days", "days"],
+  "properties": {
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "total_days": { "type": "integer" },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "theme", "outliers_count", "top_product", "top_category"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "theme": { "type": "string" },
+          "outliers_count": { "type": "integer" },
+          "top_product": { "type": "string" },
+          "top_category": { "type": "string" },
+          "cover_color": { "type": "string" }
+        }
+      }
+    }
+  }
+}

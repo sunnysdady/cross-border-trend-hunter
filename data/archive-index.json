@@ -1,0 +1,14 @@
+{
+  "updated_at": "2026-05-15T09:30:00+08:00",
+  "total_days": 1,
+  "days": [
+    {
+      "date": "2026-05-15",
+      "theme": "今天的爆款都在帮你作弊",
+      "outliers_count": 5,
+      "top_product": "AI实时翻译耳机",
+      "top_category": "消费电子 / 旅行科技",
+      "cover_color": "#ff6b9d"
+    }
+  ]
+}

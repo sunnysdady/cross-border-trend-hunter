@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爆款捕手 — <!--DATE--></title>
+<meta name="description" content="爆款捕手 — 每日自动扫描全球电商平台，捕捉异常爆款信号。<!--THEME-->">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ---- Daily Color Palette (injected by generation script) ---- */
+  :root {
+    --bg-primary: <!--BG_PRIMARY-->;
+    --bg-card: <!--BG_CARD-->;
+    --bg-accent: <!--BG_ACCENT-->;
+    --accent: <!--ACCENT-->;
+    --accent-glow: <!--ACCENT_GLOW-->;
+    --gradient-hero: <!--GRADIENT_HERO-->;
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div class="loading-overlay" id="loading">
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- Background -->
+<canvas class="bg-particles" id="particles"></canvas>
+
+<!-- Hero / Blind Box -->
+<section class="hero">
+  <div class="hero-date"><!--DATE_FORMATTED--></div>
+
+  <div class="hero-box" id="heroBox" onclick="openBox()">
+    <div class="hero-box-inner">
+      <div class="hero-box-front">🎁</div>
+      <div class="hero-box-back">
+        <span style="font-size:2rem;display:block;"><!--HERO_EMOJI--></span>
+        <span style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;">今天发现</span>
+        <span style="font-size:1.2rem;font-weight:700;color:var(--accent);"><!--OUTLIERS_COUNT--> 个爆款</span>
+      </div>
+    </div>
+    <div class="hero-box-label" id="boxLabel">👆 点我开盲盒</div>
+  </div>
+
+  <h1 class="hero-title">爆款捕手<br><span style="font-size:0.6em;font-weight:400;">Boom Catcher</span></h1>
+  <p class="hero-theme"><!--THEME--></p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-value"><!--TOTAL_SCANNED--></div>
+      <div class="hero-stat-label">扫描商品</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value"><!--OUTLIERS_COUNT--></div>
+      <div class="hero-stat-label">异常爆款</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value"><!--PLATFORMS_COUNT--></div>
+      <div class="hero-stat-label">覆盖平台</div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;animation:bounce 2s infinite;">
+    <span style="font-size:1.5rem;color:var(--text-muted);">↓</span>
+  </div>
+</section>
+
+<!-- Date Navigation -->
+<nav class="date-nav reveal-section" id="dateNav">
+  <span style="color:var(--text-muted);font-size:0.8rem;">📅 最近捕获：</span>
+  <div id="dateNavLinks" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></div>
+</nav>
+
+<!-- Tab Navigation -->
+<div class="tab-nav reveal-section" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab('us')" id="tabUs">🇺🇸 美国区</button>
+  <button class="tab-btn" onclick="switchTab('eu')" id="tabEu">🇪🇺 欧洲区</button>
+  <button class="tab-btn tab-global" onclick="switchTab('global')" id="tabGlobal">🌍 全域爆款</button>
+</div>
+
+<!-- US Products -->
+<section class="products-section tab-panel active" id="panelUs">
+  <h2 class="section-title">🇺🇸 美国区 · 异常爆款</h2>
+  <!--US_PRODUCTS_HTML-->
+</section>
+
+<!-- EU Products -->
+<section class="products-section tab-panel" id="panelEu" style="display:none;">
+  <h2 class="section-title">🇪🇺 欧洲区 · 异常爆款</h2>
+  <!--EU_PRODUCTS_HTML-->
+</section>
+
+<!-- Global / Cross-region -->
+<section class="products-section tab-panel" id="panelGlobal" style="display:none;">
+  <h2 class="section-title">🌍 全域爆款 <span style="font-size:0.7em;color:var(--text-muted);">— 在两个区域同时爆发</span></h2>
+  <!--GLOBAL_PRODUCTS_HTML-->
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p style="color:var(--text-muted);">
+    🤖 由 Claude 每日自动生成 · 数据来源：Amazon, TikTok, Shein, Temu, Reddit 等<br>
+    上次更新：<!--GENERATED_AT-->
+  </p>
+  <a href="archive.html" class="archive-link">📦 浏览历史捕获</a>
+</footer>
+
+<script>
+/* ---- Load Date Navigation ---- */
+!function(){
+  var d=document.getElementById('dateNavLinks');
+  if(!d)return;
+  var today='<!--DATE-->';
+  fetch('data/archive-index.json').then(function(r){return r.json()}).then(function(data){
+    var days=(data.days||[]).slice(0,7);
+    if(!days.length){d.innerHTML='<span style="color:var(--text-muted);font-size:0.8rem;">暂无历史</span>';return;}
+    days.forEach(function(day,i){
+      var a=document.createElement('a');
+      a.href='daily/'+day.date+'.html';
+      a.textContent=i===0?'📌 '+formatShort(day.date):formatShort(day.date);
+      a.style.cssText='padding:0.25rem 0.6rem;border-radius:14px;font-size:0.8rem;text-decoration:none;color:'+(i===0?'var(--accent)':'var(--text-secondary)')+';background:'+(i===0?'var(--accent-glow)':'var(--bg-card)')+';border:1px solid var(--border);white-space:nowrap;';
+      d.appendChild(a);
+    });
+    var more=document.createElement('a');
+    more.href='archive.html';more.textContent='…全部';
+    more.style.cssText='padding:0.25rem 0.6rem;border-radius:14px;font-size:0.8rem;text-decoration:none;color:var(--text-muted);border:1px solid var(--border);white-space:nowrap;';
+    d.appendChild(more);
+  }).catch(function(){});
+  function formatShort(dt){var p=dt.split('-');return parseInt(p[1])+'/'+parseInt(p[2]);}
+}();
+
+/* ---- Tab Switching ---- */
+function switchTab(region) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+  document.getElementById('tab' + region.charAt(0).toUpperCase() + region.slice(1)).classList.add('active');
+  document.getElementById('panel' + region.charAt(0).toUpperCase() + region.slice(1)).style.display = 'block';
+  // Re-trigger reveal animations
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-section').forEach(el => el.classList.add('visible'));
+  }, 100);
+  window.scrollTo({ top: document.getElementById('tabNav').offsetTop - 20, behavior: 'smooth' });
+}
+
+/* ---- Blind Box Interaction ---- */
+function openBox() {
+  const box = document.getElementById('heroBox');
+  const label = document.getElementById('boxLabel');
+  if (box.classList.contains('opened')) return;
+  box.classList.add('opened');
+  label.textContent = '🎉 惊喜揭晓！';
+  setTimeout(() => { label.style.opacity = '0'; }, 2000);
+
+  // Reveal product sections
+  setTimeout(() => {
+    document.querySelectorAll('.reveal-section').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 150);
+    });
+  }, 800);
+}
+
+/* ---- Loading ---- */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loading').classList.add('hidden');
+  }, 600);
+});
+
+/* ---- Background particles ---- */
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const maxParticles = 40;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() {
+      this.reset();
+      this.y = Math.random() * canvas.height;
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = -10;
+      this.size = Math.random() * 2 + 0.5;
+      this.speed = Math.random() * 0.5 + 0.2;
+      this.opacity = Math.random() * 0.3 + 0.05;
+    }
+    update() {
+      this.y += this.speed;
+      if (this.y > canvas.height + 10) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < maxParticles; i++) particles.push(new Particle());
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+
+</body>
+</html>

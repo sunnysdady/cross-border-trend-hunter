@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daily Trend Report",
+  "description": "Schema for a single day's cross-border e-commerce trend findings",
+  "type": "object",
+  "required": ["date", "generated_at", "products", "meta"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date this report covers (YYYY-MM-DD)"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the report was generated"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["total_scanned", "outliers_found", "theme"],
+      "properties": {
+        "total_scanned": {
+          "type": "integer",
+          "description": "Total number of products scanned across all platforms"
+        },
+        "outliers_found": {
+          "type": "integer",
+          "description": "Number of outlier products identified"
+        },
+        "regions": {
+          "type": "object",
+          "properties": {
+            "us": { "type": "integer" },
+            "eu": { "type": "integer" },
+            "global": { "type": "integer" }
+          }
+        },
+        "platforms_count": {
+          "type": "integer",
+          "description": "Total platforms covered across both regions"
+        },
+        "theme": {
+          "type": "string",
+          "description": "Overall theme"
+        },
+        "cover_image_prompt": {
+          "type": "string"
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "rank", "name", "category", "platforms", "anomaly_reason",
+          "voc_analysis", "business_analysis"
+        ],
+        "properties": {
+          "rank": { "type": "integer" },
+          "region": {
+            "type": "string",
+            "enum": ["us", "eu", "global"],
+            "description": "Which region this product was found in"
+          },
+          "name": {
+            "type": "string",
+            "description": "Product name as discovered"
+          },
+          "category": {
+            "type": "string",
+            "description": "Product category (e.g., Home & Kitchen, Beauty, Electronics)"
+          },
+          "price_range": {
+            "type": "string",
+            "description": "Observed price range (e.g., $12.99-$24.99)"
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "trend_signal"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": ["Amazon", "TikTok", "Shein", "Temu", "AliExpress", "Shopee", "Etsy", "eBay"]
+                },
+                "rank": { "type": ["integer", "null"] },
+                "trend_signal": {
+                  "type": "string",
+                  "enum": ["spiking", "rising", "sustained_high", "new_entry"]
+                },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+          "anomaly_reason": {
+            "type": "string",
+            "description": "Why this product is considered an outlier today"
+          },
+          "anomaly_score": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "How anomalous this product is (1-100)"
+          },
+          "voc_analysis": {
+            "type": "object",
+            "required": ["summary", "key_themes", "sentiment"],
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "Overall VOC insight: why are consumers buying this?"
+              },
+              "key_themes": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Recurring themes in consumer discussions"
+              },
+              "sentiment": {
+                "type": "object",
+                "properties": {
+                  "positive_pct": { "type": "integer" },
+                  "neutral_pct": { "type": "integer" },
+                  "negative_pct": { "type": "integer" }
+                }
+              },
+              "sources": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Sources used for VOC analysis (Reddit, TikTok comments, reviews, etc.)"
+              },
+              "quotes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": { "type": "string" },
+                    "source": { "type": "string" }
+                  }
+                },
+                "description": "Representative consumer quotes"
+              }
+            }
+          },
+          "business_analysis": {
+            "type": "object",
+            "required": ["opportunity_level", "profit_potential"],
+            "properties": {
+              "opportunity_level": {
+                "type": "string",
+                "enum": ["🔥 必跟", "⭐ 关注", "👀 观望", "❄️ 谨慎"]
+              },
+              "profit_potential": {
+                "type": "string",
+                "description": "Estimated profit margin range and rationale"
+              },
+              "supply_complexity": {
+                "type": "string",
+                "enum": ["低（现货充足）", "中（需要找工厂）", "高（定制/认证门槛）"]
+              },
+              "competition_density": {
+                "type": "string",
+                "enum": ["蓝海（卖家少）", "温和（有空间）", "红海（激烈）"]
+              },
+              "trend_sustainability": {
+                "type": "string",
+                "description": "Is this a flash fad or a lasting trend?"
+              },
+              "actionable_tips": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Concrete actionable advice for sellers"
+              }
+            }
+          },
+          "product_image_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to product image (if available)"
+          }
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "cover_image_path": {
+          "type": "string",
+          "description": "Path to generated cover image"
+        },
+        "color_palette": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "CSS color palette for the day's page"
+        },
+        "page_style": {
+          "type": "string",
+          "description": "Visual style applied to today's page"
+        }
+      }
+    }
+  }
+}

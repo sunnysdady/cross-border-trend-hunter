@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爆款捕手 — 2026.5.15 🇺🇸🇪🇺 双区上线</title>
+<meta name="description" content="爆款捕手 — 每日扫描美欧12平台，捕捉异常爆款信号。美欧双区同步上线。">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  :root {
+    --bg-primary: #0d0d1a;
+    --bg-card: #1a1a2e;
+    --bg-accent: #1e1e3a;
+    --accent: #ff6b9d;
+    --accent-glow: rgba(255, 107, 157, 0.25);
+    --gradient-hero: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #1e1030 100%);
+  }
+</style>
+</head>
+<body>
+<div class="loading-overlay" id="loading"><div class="loading-spinner"></div></div>
+<canvas class="bg-particles" id="particles"></canvas>
+
+<section class="hero">
+  <div class="hero-date">2026年5月15日 · 星期五</div>
+  <div class="hero-box" id="heroBox" onclick="openBox()">
+    <div class="hero-box-inner">
+      <div class="hero-box-front">🎁</div>
+      <div class="hero-box-back">
+        <span style="font-size:2rem;">🎮</span>
+        <span style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;">今天捕获</span>
+        <span style="font-size:1.2rem;font-weight:700;color:var(--accent);">6 个爆款</span>
+      </div>
+    </div>
+    <div class="hero-box-label" id="boxLabel">👆 点我开盲盒</div>
+  </div>
+  <h1 class="hero-title">爆款捕手<br><span style="font-size:0.6em;font-weight:400;">Boom Catcher</span></h1>
+  <p class="hero-theme">美欧双区同步上线 · 🇺🇸 美国区 3 个信号 · 🇪🇺 欧洲区 2 个信号 · 🌍 1 个全域爆款</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-value">124</div><div class="hero-stat-label">扫描商品</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">6</div><div class="hero-stat-label">异常爆款</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">12</div><div class="hero-stat-label">覆盖平台</div></div>
+  </div>
+  <div style="margin-top:2rem;animation:bounce 2s infinite;"><span style="font-size:1.5rem;color:var(--text-muted);">↓</span></div>
+</section>
+
+<div class="tab-nav reveal-section" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab('us')" id="tabUs">🇺🇸 美国区</button>
+  <button class="tab-btn" onclick="switchTab('eu')" id="tabEu">🇪🇺 欧洲区</button>
+  <button class="tab-btn tab-global" onclick="switchTab('global')" id="tabGlobal">🌍 全域爆款</button>
+</div>
+
+<!-- US Region -->
+<section class="products-section tab-panel active" id="panelUs">
+  <h2 class="section-title">🇺🇸 美国区 · 异常爆款</h2>
+  <article class="product-card reveal-section"><div class="product-rank">#1</div><div class="product-header"><div><h3 class="product-name">AI实时翻译耳机 <span class="cross-region-badge">🌍 全域</span></h3><span class="product-category">消费电子 / 旅行科技</span></div></div><div class="product-price">$11.60 – $420</div><div class="platform-badges"><span class="platform-badge spiking">TikTok US 爆发</span><span class="platform-badge rising">Amazon US 上升</span><span class="platform-badge new_entry">Walmart 新入榜</span></div><div class="anomaly-callout">🎯 极端价格带（$11.60 vs $420），TikTok对比评测病毒传播，亚马逊+沃尔玛同时上榜<span class="anomaly-score">异常指数：88/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge must-follow">🔥 必跟</div></div><div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">60-70% 净利率</div></div><div class="biz-card"><div class="biz-card-label">供应链</div><div class="biz-card-value">中（找厂）</div></div><div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和</div></div></div><ul class="tips-list"><li>主攻$49-79中端，配离线App</li><li>内容营销强调"社恐救星"场景</li><li>美欧同时铺货，天然全域品类</li></ul></article>
+  <article class="product-card reveal-section"><div class="product-rank">#2</div><div class="product-header"><div><h3 class="product-name">蜘蛛侠电动蛛网发射器</h3><span class="product-category">玩具 / 怀旧收藏</span></div></div><div class="product-price">$19 – $45</div><div class="platform-badges"><span class="platform-badge spiking">Amazon US 爆发</span><span class="platform-badge new_entry">TikTok US 新入</span><span class="platform-badge sustained_high">eBay US 收藏热</span></div><div class="anomaly-callout">🎯 无新电影年份却多平台爆发，成人给自己买童年的遗憾，71%利润率<span class="anomaly-score">异常指数：78/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge watch">⭐ 关注</div></div><div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">60-75% 毛利</div></div><div class="biz-card"><div class="biz-card-label">供应链</div><div class="biz-card-value">低（现货）</div></div><div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和</div></div></div><ul class="tips-list"><li>主推USB充电款$25-35</li><li>耗材订阅（凝胶液+替换头）拉复购</li><li>父亲节/圣诞前1个月加大投放</li></ul></article>
+  <article class="product-card reveal-section"><div class="product-rank">#3</div><div class="product-header"><div><h3 class="product-name">穿戴甲 Press-On Nails</h3><span class="product-category">美容个护</span></div></div><div class="product-price">$7 – $25</div><div class="platform-badges"><span class="platform-badge spiking">TikTok US 爆发</span><span class="platform-badge sustained_high">Amazon US 热销</span><span class="platform-badge rising">Target 上架</span></div><div class="anomaly-callout">🎯 $10产品替代$120/月美甲消费，Target开始铺货＝品类已入主流零售<span class="anomaly-score">异常指数：82/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge must-follow">🔥 必跟</div></div><div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">80%+ 毛利</div></div><div class="biz-card"><div class="biz-card-label">供应链</div><div class="biz-card-value">低（现货）</div></div><div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和</div></div></div><ul class="tips-list"><li>切细分尺码市场（大码/小码/宽甲）</li><li>$15/月订阅制拉高LTV</li><li>配售UV胶+迷你灯增值套装</li></ul></article>
+</section>
+
+<!-- EU Region -->
+<section class="products-section tab-panel" id="panelEu" style="display:none;">
+  <h2 class="section-title">🇪🇺 欧洲区 · 异常爆款</h2>
+  <article class="product-card reveal-section"><div class="product-rank">#1</div><div class="product-header"><div><h3 class="product-name">红光美容面罩</h3><span class="product-category">美容科技</span></div></div><div class="product-price">€49 – €329</div><div class="platform-badges"><span class="platform-badge spiking">TikTok EU 400%增长</span><span class="platform-badge rising">Amazon DE 上升</span><span class="platform-badge new_entry">Cdiscount FR 新入</span></div><div class="anomaly-callout">🎯 医疗级设备下沉消费市场，欧洲消费者更关注CE认证和临床数据，增速400%<span class="anomaly-score">异常指数：85/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge watch">⭐ 关注</div></div><div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">高但门槛高</div></div><div class="biz-card"><div class="biz-card-label">合规要求</div><div class="biz-card-value">CE + 医疗设备</div></div><div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">红海</div></div></div><ul class="tips-list"><li>必须CE认证+多语言说明书</li><li>做配件生态（收纳/替换绑带）</li><li>欧盟14天无理由退货必须支持</li></ul></article>
+  <article class="product-card reveal-section"><div class="product-rank">#2</div><div class="product-header"><div><h3 class="product-name">NAD+ / 皮质醇管理补剂</h3><span class="product-category">保健品 / 生物黑客</span></div></div><div class="product-price">€22 – €110</div><div class="platform-badges"><span class="platform-badge spiking">TikTok EU 爆发</span><span class="platform-badge rising">Amazon UK 上升</span><span class="platform-badge new_entry">Allegro PL 新入</span></div><div class="anomaly-callout">🎯 生物黑客走向欧洲大众，但欧盟Novel Food法规对补剂监管远严于美国<span class="anomaly-score">异常指数：80/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge observe">👀 观望</div></div><div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">70-85% 毛利</div></div><div class="biz-card"><div class="biz-card-label">合规要求</div><div class="biz-card-value">Novel Food + 各国注册</div></div><div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">红海</div></div></div><ul class="tips-list"><li>先确认产品是否在欧盟Novel Food目录</li><li>必须第三方检测+公开报告</li><li>各国标签语言要求不同（DE/FR/IT/ES/PL）</li></ul></article>
+</section>
+
+<!-- Global -->
+<section class="products-section tab-panel" id="panelGlobal" style="display:none;">
+  <h2 class="section-title">🌍 全域爆款 <span style="font-size:0.7em;color:var(--text-muted);">— 同时在美欧爆发的信号最强</span></h2>
+  <article class="product-card reveal-section"><div class="product-rank">🌍</div><div class="product-header"><div><h3 class="product-name">AI实时翻译耳机 <span class="cross-region-badge">🌍 全域爆款</span></h3><span class="product-category">消费电子 / 旅行科技</span></div></div><div class="product-price">$11.60 – $420 / €10 – €399</div><div class="platform-badges"><span class="platform-badge spiking">TikTok US 爆发</span><span class="platform-badge spiking">TikTok EU 爆发</span><span class="platform-badge rising">Amazon US + DE</span><span class="platform-badge new_entry">Walmart + Cdiscount</span></div><div class="anomaly-callout">🎯 唯一同时在美欧6+平台出现异常信号的品类。天然全域品类——跨境旅行和远程工作是全球需求。<span class="anomaly-score">异常指数：92/100</span></div><div class="biz-section"><div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge must-follow">🔥 必跟</div></div><div class="biz-card"><div class="biz-card-label">全域利润</div><div class="biz-card-value">60-70% 净利</div></div><div class="biz-card"><div class="biz-card-label">合规</div><div class="biz-card-value">FCC(美) + CE(欧)</div></div><div class="biz-card"><div class="biz-card-label">全域竞争</div><div class="biz-card-value">蓝海</div></div></div><ul class="tips-list"><li>最大机会：一个SKU吃美欧两个市场</li><li>App多语言界面（中/英/德/法/西/日）</li><li>定价：美国$49-79，欧洲€39-69</li></ul></article>
+</section>
+
+<footer class="site-footer">
+  <p style="color:var(--text-muted);">🤖 由 Claude 每日自动生成 · 数据来源：Amazon US/UK/DE, Walmart, TikTok US/EU, Etsy, eBay, Target, Shein, Allegro, Cdiscount, ASOS<br>上次更新：2026-05-15 09:30 CST</p>
+  <a href="archive.html" class="archive-link">📦 浏览历史捕获</a>
+</footer>
+
+<script>
+function switchTab(r) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none'});
+  var c=r.charAt(0).toUpperCase()+r.slice(1);
+  document.getElementById('tab'+c).classList.add('active');
+  document.getElementById('panel'+c).style.display='block';
+  setTimeout(function(){document.querySelectorAll('.reveal-section').forEach(function(e){e.classList.add('visible')})},100);
+  window.scrollTo({top:document.getElementById('tabNav').offsetTop-20,behavior:'smooth'});
+}
+function openBox(){
+  var b=document.getElementById('heroBox'),l=document.getElementById('boxLabel');
+  if(b.classList.contains('opened'))return;
+  b.classList.add('opened');l.textContent='🎉 惊喜揭晓！';
+  setTimeout(function(){l.style.opacity='0'},2000);
+  setTimeout(function(){document.querySelectorAll('.reveal-section').forEach(function(e,i){setTimeout(function(){e.classList.add('visible')},i*150)})},800);
+}
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loading').classList.add('hidden')},600)});
+(function(){var c=document.getElementById('particles'),ctx=c.getContext('2d'),p=[];
+function rs(){c.width=window.innerWidth;c.height=window.innerHeight}rs();window.addEventListener('resize',rs);
+var Pt=function(){this.reset();this.y=Math.random()*c.height};
+Pt.prototype.reset=function(){this.x=Math.random()*c.width;this.y=-10;this.size=Math.random()*2+0.5;this.speed=Math.random()*0.5+0.2;this.opacity=Math.random()*0.3+0.05};
+Pt.prototype.update=function(){this.y+=this.speed;if(this.y>c.height+10)this.reset()};
+Pt.prototype.draw=function(){ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,2*Math.PI);ctx.fillStyle='rgba(255,107,157,'+this.opacity+')';ctx.fill()};
+for(var i=0;i<40;i++)p.push(new Pt());
+(function a(){ctx.clearRect(0,0,c.width,c.height);p.forEach(function(pp){pp.update();pp.draw()});requestAnimationFrame(a)})()})();
+</script>
+</body>
+</html>
