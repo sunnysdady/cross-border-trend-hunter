@@ -67,6 +67,8 @@ Replace all `<!--PLACEHOLDER-->` tags with actual content. For `<!--PRODUCTS_HTM
 ```html
 <article class="product-card reveal-section">
   <div class="product-rank">#RANK</div>
+  <!-- Product image: emoji + Google Images search link -->
+  <a href="https://www.google.com/search?tbm=isch&q=PRODUCT_IMAGE_SEARCH_QUERY" target="_blank" class="product-image-wrap" title="点击搜索产品图片">PRODUCT_EMOJI</a>
   <div class="product-header">
     <div>
       <h3 class="product-name">PRODUCT_NAME</h3>
@@ -118,8 +120,17 @@ Replace all `<!--PLACEHOLDER-->` tags with actual content. For `<!--PRODUCTS_HTM
     <span style="font-size:0.85rem;color:var(--text-secondary);">TREND_SUSTAINABILITY</span>
   </div>
   <ul class="tips-list">ACTIONABLE_TIPS</ul>
+  <!-- Source links: Amazon/TikTok/Etsy + Google Images search -->
+  <div class="source-links">
+    <span class="source-links-label">🔗 探索来源：</span>
+    SOURCE_LINKS_HTML
+  </div>
 </article>
 ```
+
+**Image guidelines**: Pick a representative emoji for each product category. The image wrap links to a Google Images search for the product. Use descriptive English search queries.
+
+**Source links**: Generate 3-4 platform-specific search links per product. Format: `<a class="source-link" href="SEARCH_URL" target="_blank">🛒 PLATFORM_NAME</a>`. Include a final `🖼️ 图片搜索` link to Google Images.
 
 ### Phase 7: Save Data
 Create `data/daily/YYYY-MM-DD.json` following the schema in `data/schema.json`. Validate that all required fields are present.
