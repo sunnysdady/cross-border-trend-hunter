@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO_DIR="$HOME/Desktop/boom-catcher 2"
+REPO_DIR="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/sunnysdady/10 Projects/boom-catcher"
 LOCK_FILE="/tmp/boom-catcher-push.lock"
 cd "$REPO_DIR" || exit 1
 [ -f "$LOCK_FILE" ] && exit 0
