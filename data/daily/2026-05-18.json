@@ -1,292 +1,187 @@
 {
   "date": "2026-05-18",
-  "generated_at": "2026-05-18T09:00:00+08:00",
+  "generated_at": "2026-05-18T10:30:00+08:00",
   "meta": {
-    "total_scanned": 78,
+    "total_scanned": 156,
     "outliers_found": 6,
-    "regions": {
-      "us": 3,
-      "eu": 3,
-      "global": 2
-    },
+    "regions": { "us": 3, "eu": 2, "global": 1 },
     "platforms_count": 12,
-    "theme": "美欧消费者同步转向'自我关怀消费'——从牙齿美白到LED光疗、从解压首饰到波西米亚芭蕾鞋，健康与美丽的边界正在消融。一个$8的剃毛油能在Amazon月销2万件，一副$14的解压戒指能在TikTok卖出$16.7万GMV——消费者在用小额消费重建对生活的掌控感。",
-    "cover_image_prompt": "A dreamy split-screen digital illustration: left side shows American consumer items floating in warm coral and amber light — a vanilla shave oil bottle, a spinning anxiety ring, smart plugs with glowing energy lines; right side shows European items in cool ocean blue light — embroidered boho ballet flats, a sleek wet-dry vacuum, LED beauty masks with therapeutic red glow. Center bridge shows DRDENT whitening strips and red light masks glimmering across both sides. Pastel cyber-aesthetic with soft gradients."
+    "theme": "🧘 今天的爆款都在偷走焦虑",
+    "cover_image_prompt": "Calm teal gradient with floating meditation and stress-relief toys, anxiety ring, squishy blind boxes, gardening kneeler, pet feeder, dark mode elegant"
   },
   "products": [
     {
-      "rank": 1,
-      "region": "global",
-      "name": "DRDENT Purple Teeth Whitening Strips",
-      "category": "美容个护 / 口腔护理",
-      "price_range": "$17 – $25 / €15 – €23",
+      "rank": 1, "region": "us",
+      "name": "焦虑戒指 · Anxiety Spinner Ring",
+      "category": "功能性饰品 / 心理健康",
+      "price_range": "$11 – $50",
       "platforms": [
-        {"name": "TikTok", "rank": 1, "trend_signal": "spiking", "notes": "同时霸榜US/UK/DE/FR四国TikTok Shop Top 3，美国Q1 $8.9M GMV"},
-        {"name": "Amazon", "rank": 8, "trend_signal": "rising", "notes": "Amazon UK 27K+评价，4.3/5星，但2026年4月NAD挑战后品牌主动撤销广告宣称"},
-        {"name": "Temu", "rank": null, "trend_signal": "new_entry", "notes": "低价竞品开始涌入，$3-5的PAP美白贴片大量上架"}
+        { "name": "TikTok", "trend_signal": "spiking", "notes": "14.7K units, $167K GMV" },
+        { "name": "Amazon", "trend_signal": "rising" },
+        { "name": "Etsy", "trend_signal": "new_entry", "notes": "手工定制版" }
       ],
-      "anomaly_reason": "同一个SKU在4个不同国家、3种不同语言的TikTok Shop同时霸榜Top 3，这是极其罕见的全域信号。PAP无过氧化氢配方击中全球'敏感牙齿'痛点。但2026年4月NAD（美国国家广告审查）挑战其广告宣称，品牌主动放弃部分功效声明——高光与阴影同时存在，是爆款也是风险品。",
-      "anomaly_score": 92,
+      "anomaly_reason": "心理健康用品伪装成时尚饰品在TikTok爆红",
+      "anomaly_score": 85,
       "voc_analysis": {
-        "summary": "DRDENT是典型的'一半天使一半魔鬼'产品。喜爱者称其为'人生中最好的美白产品'——见效快、不敏感、薄荷味好；痛恨者则控诉贴片不粘、效果短暂、客服和订阅扣费是骗局。Reddit上几乎零自然讨论——对于一个被重金推广的产品来说，这是极不寻常的沉默，可能意味着大量评价并非来自真实自发用户。",
-        "key_themes": [
-          "敏感牙齿福音——PAP配方确实比过氧化氢温和，这是最核心的差异化卖点",
-          "贴片粘性灾难——最多人抱怨的问题：贴不牢、滑动、需要用手一直按住",
-          "效果两极化——有人一次见效（shade 6→4），有人用4周只看到'slight change'",
-          "订阅陷阱投诉——Trustpilot多人报告被自动订阅扣费、取消困难、客服失联",
-          "NAD挑战的连锁反应——品牌主动放弃功效宣称后，消费者信任度进一步下降",
-          "跨境合规暗礁——欧盟化妆品法规(EC)1223/2009对美白宣称有严格限制"
-        ],
-        "sentiment": {"positive_pct": 55, "neutral_pct": 20, "negative_pct": 25},
-        "sources": ["Amazon US/UK reviews", "Trustpilot (4.3/5)", "BBB National Programs NAD decision", "TikTok #drdent", "Reddit (几乎无讨论)"],
-        "quotes": [
-          {"text": "Went from shade 6 to 4 in FIRST USE!!! All that hype on social media… ITS TRUE!!!", "source": "Kolsprite review, Feb 2026"},
-          {"text": "Do not order from this company under any circumstances. They use deceptive tactics to sign customers up for subscriptions.", "source": "Trustpilot, Apr 2026"},
-          {"text": "Not sure what all the hype is about, I've used these 4 times now and noticed only a slight change.", "source": "Kolsprite review, Mar 2026"},
-          {"text": "No other whitening strips have come close to these — they've given me my confidence back.", "source": "Amazon UK review"}
-        ]
-      },
-      "business_analysis": {
-        "opportunity_level": "⭐ 关注",
-        "profit_potential": "毛利高但风险大。PAP配方原料成本低（$1-3/套），零售$17-25，毛利率70-85%。但高退货率（粘性问题）、高客服成本（订阅投诉）、和高合规风险（NAD挑战+欧盟法规）侵蚀净利润。真正的利润在'改良版'：解决粘性问题+拿到合规认证的品牌可以收割DRDENT流失的用户。",
-        "supply_complexity": "中（需要找工厂）",
-        "competition_density": "红海（激烈）",
-        "trend_sustainability": "中期趋势但品牌洗牌在即。牙齿美白需求永恒，PAP作为新技术路线会留下来。但DRDENT这个品牌能否挺过NAD挑战和消费者信任危机是未知数。改良版（更好的贴片胶+合规包装）有替代机会。",
-        "actionable_tips": [
-          "不要直接卖DRDENT——做'DRDENT改进版'：重点解决贴片粘性问题（加宽贴片+改进胶水配方）",
-          "务必在欧盟市场做合规前置：避免'whitening'宣称，改用'brightening'或'stain removal'",
-          "在Reddit r/beauty和r/skincareaddiction做真实用户种草——DRDENT在这个阵地的空白就是你的机会"
-        ]
-      }
-    },
-    {
-      "rank": 2,
-      "region": "global",
-      "name": "家用红光/近红外美容面罩",
-      "category": "美容科技 / 个人护理",
-      "price_range": "$99 – $470 / €89 – €439",
-      "platforms": [
-        {"name": "TikTok", "rank": 1, "trend_signal": "spiking", "notes": "TikTok Shop UK美容科技类目增长400%，直播转化率26%"},
-        {"name": "Amazon", "rank": 10, "trend_signal": "rising", "notes": "Omnilux ($395)、CurrentBody ($470)、Shark CryoGlow ($349)三足鼎立"},
-        {"name": "Allegro", "rank": 5, "trend_signal": "spiking", "notes": "波兰Allegro LED面罩同比+31%，Silk'n和Beautifly领先"},
-        {"name": "Cdiscount", "rank": 15, "trend_signal": "new_entry", "notes": "法国平台智能家居类目增速37%，美容设备子类同步增长"}
-      ],
-      "anomaly_reason": "医疗级光疗技术（医院皮肤科配置）正在加速下沉到家用消费市场，且增速（400% YoY）远超传统美容品类。更异常的是：非传统美容品牌（照明公司Nanoleaf）开始跨界进入，Reddit社区自发形成了'参数党'文化（对比辐照度、波长、临床数据）——这种行为模式通常只在科技产品（显卡、相机）中出现，现在出现在了美容产品上。",
-      "anomaly_score": 88,
-      "voc_analysis": {
-        "summary": "购买红光面罩的人分两派：'科技护肤党'像买显卡一样研究波长/辐照度/临床数据；'懒人美容党'单纯不想去美容院但想要效果。两个群体都高度依赖Reddit（112+讨论帖）和评测内容做决策。最大抱怨不是没效果，而是'效果太慢'（需要4-8周坚持）和'便宜的没效果，有效果的太贵'。欧洲消费者对CE认证和临床数据的要求比美国更严格。",
-        "key_themes": [
-          "参数党崛起——消费者自学630-660nm波长、20mW/cm²辐照度，Reddit r/redlighttherapy已成专业论坛",
-          "面板vs面罩之争——面板功率高但要坐着不动，面罩可边做家务边用，使用场景决定选择",
-          "Shark CryoGlow的冷敷差异——眼下冷敷垫解决了'眼部不适'痛点，差异化卖点拉高$349定价接受度",
-          "质保焦虑——多个品牌在质保期结束前出现控制器/电池故障，'$400用一年'是常见吐槽",
-          "欧盟合规壁垒——Class IIa医疗器械CE认证是进入欧洲市场的硬门槛，挡住大量白牌"
-        ],
-        "sentiment": {"positive_pct": 65, "neutral_pct": 22, "negative_pct": 13},
-        "sources": ["Reddit r/redlighttherapy (112+ threads)", "Reddit r/skincareaddiction", "Amazon reviews", "Harper's Bazaar 2026测评", "Prevention year-long test", "winfuture.de"],
-        "quotes": [
-          {"text": "Don't buy those $30 Amazon masks. Minimum 20mW/cm² irradiance or you're just wearing a fancy Halloween costume.", "source": "Reddit r/redlighttherapy 高赞评论"},
-          {"text": "用了6周，同事问我是不是换了粉底。我没换，是红光面罩让皮肤细腻了。但前4周真的想放弃。", "source": "Reddit r/redlighttherapy"},
-          {"text": "I've spent more on facials in 3 months than this mask costs. Now I just Netflix-and-LED.", "source": "CurrentBody Amazon review"},
-          {"text": "The cryo cooling pads on the Shark CryoGlow are a game changer — my eyes don't feel fried after sessions anymore.", "source": "Prevention editor year-long review, 2026"}
-        ]
-      },
-      "business_analysis": {
-        "opportunity_level": "⭐ 关注",
-        "profit_potential": "高利润但高壁垒。白牌/低价品（<$50）已被Reddit社区'判死刑'——参数虚标一旦被曝光，口碑不可逆。中端（$99-$199 Clara级）是最大增量市场——入门价让'想试试但又不想花$400'的消费者迈出第一步。真正高利润在配件生态：替换绑带、收纳包、搭配凝胶/精华。欧洲市场必须过CE Class IIa医疗器械认证，这是硬门槛也是护城河。",
-        "supply_complexity": "高（定制/认证门槛）",
-        "competition_density": "红海（激烈）",
-        "trend_sustainability": "长期趋势且仍在加速。2025年JAAD共识评审为光疗正名，医学背书将持续推动需求。2026年TikTok Shop欧洲扩至9国将进一步放大传播。3-5年后可能像电动牙刷一样普及，当前仍处于早期大众阶段。",
-        "actionable_tips": [
-          "不要做低价白牌——Reddit社区会主动曝光参数虚标，负面口碑传播极快且不可逆",
-          "做配件生态而非硬件：红光面罩专用收纳架、可替换亲肤绑带、搭配使用的透明质酸精华",
-          "欧洲市场策略：先拿CE Class IIa认证再进场，不要走'先卖后补'的捷径",
-          "内容策略瞄准'4周挑战'：鼓励用户每周拍照记录，利用前后对比UGC做自然传播"
-        ]
-      }
-    },
-    {
-      "rank": 3,
-      "region": "us",
-      "name": "Eos Cashmere 剃毛油",
-      "category": "美容个护 / 身体护理",
-      "price_range": "$7.97",
-      "platforms": [
-        {"name": "Amazon", "rank": 3, "trend_signal": "spiking", "notes": "2026年3月单品月销20,000+件，4.7星/6,500+评价，Movers & Shakers常客"},
-        {"name": "TikTok", "rank": 5, "trend_signal": "spiking", "notes": "Eos Vanilla Cashmere身体乳的TikTok病毒效应延伸至剃毛油，UGC香氛内容海量"},
-        {"name": "Walmart", "rank": 8, "trend_signal": "rising", "notes": "实体+线上双渠道铺货，$7.97定价适合冲动消费"},
-        {"name": "Target", "rank": 12, "trend_signal": "sustained_high", "notes": "Target个护品类常驻商品，多香型SKU铺货"}
-      ],
-      "anomaly_reason": "一个$8的剃毛油，在没有大促、没有明星代言、没有联名的情况下，Amazon单品月销20,000+件。驱动力是纯粹的产品力+scent marketing（香氛营销）——奶油香草+麝香+焦糖的香气组合让用户自发在TikTok上生产海量开箱/闻香/使用前后的UGC内容。这是'闻起来很贵但买起来不贵'的轻奢效应在个人护理品类的完美案例。",
-      "anomaly_score": 84,
-      "voc_analysis": {
-        "summary": "Eos Cashmere剃毛油的消费者几乎不谈'剃毛'本身——他们在谈'香气'、'柔软'、'自我犒赏'。这款产品成功地把一个功能性行为（剃毛）重新包装成了一个小型自我护理仪式。$8的定价让消费者觉得'这算什么奢侈？这是每天给自己的迷你礼物'。负面反馈集中在香精过敏和'过誉'——有些人期待的是$40护肤油的体验，忘记了它只是$8。",
-        "key_themes": [
-          "香氛是真正的产品——Vanilla Cashmere香气被描述为'intoxicating'、'像焦糖香草甜点'、'留香一整天'",
-          "剃刀顺滑度是隐藏卖点——用户反复提到'有史以来最顺滑的剃毛体验'、'剃刀像在冰面上滑行'",
-          "敏感肌分歧——对香味不过敏的人爱到不行，过敏的人一用就红疹——没有中间地带",
-          "Lemon8反水——部分Lemon8用户称其'overhyped'，'比普通药妆剃毛膏好不了多少'",
-          "香型矩阵策略——2026年新增Coconut Waters和Pink Champagne香型，扩大客群覆盖"
-        ],
-        "sentiment": {"positive_pct": 78, "neutral_pct": 15, "negative_pct": 7},
-        "sources": ["Amazon US reviews (6,500+)", "Walmart reviews", "Lemon8 #eosshawveoil", "BuzzFeed shopping guides", "TikTok #cashmereshaveoil"],
-        "quotes": [
-          {"text": "It creates the smoothest shave I've ever had, leaving my skin feeling incredibly soft and hydrated. My razor moves effortlessly.", "source": "Amazon review (Shay, verified purchase)"},
-          {"text": "I bought this because of TikTok and honestly? It smells like a warm hug. I look forward to shaving now which is a sentence I never thought I'd say.", "source": "Walmart review"},
-          {"text": "Not worth the hype. Left my skin feeling more meh than moisturized. Basic drugstore shaving cream works better for me.", "source": "Lemon8 @hellojanise"}
-        ]
+        "summary": "Reddit共识：史上最隐蔽的办公室解压神器。70%好评集中在替换抠手/咬指甲坏习惯",
+        "key_themes": ["办公室解压", "指甲/皮肤替代行为", "24/7随时可用", "成人版Fidget"],
+        "sentiment": { "positive_pct": 72, "neutral_pct": 18, "negative_pct": 10 },
+        "sources": ["Reddit r/Anxiety", "r/fidgettoys", "TikTok评论"],
+        "quotes": [{ "text": "Real diamond rings can't spin like this.", "source": "TikTok评论区" }]
       },
       "business_analysis": {
         "opportunity_level": "🔥 必跟",
-        "profit_potential": "极高。个护油类产品成本$0.80-1.50/瓶（6 fl oz），零售$7.97，毛利率80-85%。香型矩阵带来自然复购——消费者买完Vanilla Cashmere会想试Fresh & Cozy和Coconut Waters。订阅制（每2月自动寄送）LTV可拉高3-5倍。",
-        "supply_complexity": "低（现货充足）",
-        "competition_density": "温和（有空间）",
-        "trend_sustainability": "中期趋势。Eos品牌红利至少还能吃1-2年，但'香氛剃毛油'这个品类会被大量跟进。差异化方向：功能性升级（添加烟酰胺美白、茶树抗痘）+ 更细分的香型（木质调、柑橘调覆盖男性和中性市场）。",
-        "actionable_tips": [
-          "做'Eos替代/升级版'：添加功效成分（烟酰胺美白腋下、水杨酸防毛囊角化），从'好闻'升级到'好闻+有用'",
-          "切男性剃须油市场——目前Eos几乎全是女性用户，男性剃须油+木质香调是空白地带",
-          "香型订阅制：每月自动寄送当季限定香型，制造'收集全套'的驱动力"
-        ]
+        "profit_potential": "85%+ 毛利",
+        "supply_complexity": "低（现货）",
+        "competition_density": "蓝海",
+        "trend_sustainability": "可持续——功能性饰品是长期趋势",
+        "actionable_tips": ["主攻316L不锈钢$29-39", "TikTok: 会议桌下偷转 vs 抠烂手指对比", "刻字/诞生石定制拉高客单价"]
       }
     },
     {
-      "rank": 4,
-      "region": "us",
-      "name": "解压旋转戒指（Fidget Spinner Rings）",
-      "category": "健康生活 / 情绪配件",
-      "price_range": "$14 – $124",
+      "rank": 2, "region": "us",
+      "name": "毕业弹跳礼盒 · Graduation Pop-Up Box",
+      "category": "节庆礼品 / 情绪消费",
+      "price_range": "$15 – $35",
       "platforms": [
-        {"name": "TikTok", "rank": 4, "trend_signal": "spiking", "notes": "TikTok Shop US 14,700+件，$167,900 GMV，解压+时尚双标签"},
-        {"name": "Amazon", "rank": 18, "trend_signal": "rising", "notes": "Calm Collective (~£40)、MUCAL 8件套($14)等品牌评价数千条"},
-        {"name": "Etsy", "rank": 10, "trend_signal": "sustained_high", "notes": "独立设计师手作不锈钢戒指$25-60，定制刻字、宝石镶嵌等高溢价款"}
+        { "name": "TikTok", "trend_signal": "spiking", "notes": "10天9182件/$112K GMV" },
+        { "name": "Amazon", "trend_signal": "rising" },
+        { "name": "Etsy", "trend_signal": "new_entry", "notes": "手工定制版" }
       ],
-      "anomaly_reason": "解压玩具品类正在经历'成人化'和'时尚化'的双重升级。传统解压玩具（指尖陀螺、捏捏乐）止步于$5-10的儿童市场，而解压戒指以$14-124的价格带进入了'可穿戴情绪配件'的新品类。Reddit r/CompulsiveSkinPicking社区中7/10帖推荐戒指优于手持玩具——因为戒指就戴在'你本来要去抓挠的那根手指上'，提供实时行为替代。这是一个从临床需求溢出到时尚消费的异常路径。",
+      "anomaly_reason": "纯情绪消费品，10天$112K，1900万播放单视频带8510单",
       "anomaly_score": 82,
       "voc_analysis": {
-        "summary": "解压戒指的消费者画像极其清晰：25-40岁、办公室工作、有轻度焦虑或皮肤抓挠习惯（BFRB）。他们不是在买首饰——他们在买一种'不被同事发现的自我调节工具'。材质是Reddit最激烈讨论的话题：$8-15合金戒指几周内变色卡顿、染绿手指，316L不锈钢是最低可用标准。'两周测试'是社区共识——廉价戒指活不过两周。",
-        "key_themes": [
-          "材质决定一切——316L不锈钢是底线，925银是进阶，合金=废铁",
-          "背景vs前景刺激——戒指提供'背景刺激'（全天候无意识调节），手持玩具提供'前景刺激'（高强度主动释放）",
-          "办公室隐形需求——不能有声音、不能太显眼、不能看起来像玩具——'看起来像正常戒指'是核心诉求",
-          "皮肤抓挠替代——r/CompulsiveSkinPicking社区是重度用户聚集地，指甲抓挠→转动戒指的行为替换成功率很高",
-          "24/7佩戴的考验——约30%用户全天佩戴，所以舒适度、防水性、不过敏是刚需"
-        ],
-        "sentiment": {"positive_pct": 72, "neutral_pct": 18, "negative_pct": 10},
-        "sources": ["Reddit r/fidgettoys", "Reddit r/Anxiety", "Reddit r/CompulsiveSkinPicking", "The Standard UK 2026测评", "DG Jewelry 2026指南", "Amazon reviews"],
-        "quotes": [
-          {"text": "I've been wearing this spinner ring for two weeks — it's completely replaced my nervous engagement-ring fiddling habit. Game changer.", "source": "The Standard UK, Vicky Jessop, Mar 2026"},
-          {"text": "About 30% of us wear them 24/7. The key is material — 316L stainless steel minimum. Anything less and you'll have a green finger and a seized ring within 3 weeks.", "source": "Reddit r/fidgettoys 社区共识"},
-          {"text": "My therapist actually recommended I try one for my skin picking. 7 months later, my cuticles are healed for the first time in 15 years.", "source": "Reddit r/CompulsiveSkinPicking"},
-          {"text": "Good quality. No staining. Ring never comes off. Actually helps me stop picking.", "source": "Loox review, Lauren K., Mar 2026"}
-        ]
-      },
-      "business_analysis": {
-        "opportunity_level": "🔥 必跟",
-        "profit_potential": "极高。不锈钢戒指生产成本$2-5/只（316L钢+精密轴承），零售$25-60，毛利率75-90%。设计师款（925银、镀金、镶嵌宝石）零售$80-200，品牌溢价空间更大。耗材（替换轴承、清洁套装）可做复购。",
-        "supply_complexity": "低（现货充足）",
-        "competition_density": "蓝海（卖家少）",
-        "trend_sustainability": "长期趋势。焦虑和BFRB（身体聚焦重复行为）的发病率在上升，远程办公让更多人注意到自己的无意识习惯（抖腿、咬指甲、抓皮肤）。解压戒指不是时尚泡沫——它解决的是一个真实的、持续增长的临床需求。随着'心理健康日常化'的社会趋势，这个品类有10年以上的增长空间。",
-        "actionable_tips": [
-          "材质即品牌——用316L不锈钢做底线，公开材质证书，做'解压戒指界的Dyson'",
-          "切BFRB社区——与皮肤科医生、心理咨询师合作背书，进入'临床推荐'渠道而非仅做时尚消费品",
-          "做'安静轴承'专利——目前最大痛点之一是廉价戒指的吱吱声，谁先做出完全静音的旋转轴承，谁就能拿走高端市场",
-          "设计分男女款——目前市场90%产品偏女性化，男性解压戒指（黑色钨钢+齿轮设计）是巨大的空白地带"
-        ]
-      }
-    },
-    {
-      "rank": 5,
-      "region": "eu",
-      "name": "JONR H2 Pro 洗地吸尘器",
-      "category": "家用电器 / 清洁设备",
-      "price_range": "€169 – €299",
-      "platforms": [
-        {"name": "TikTok", "rank": 1, "trend_signal": "spiking", "notes": "德国TikTok Shop JONR系列€541K GMV，意大利€295K，清洁家电跨市场爆发"},
-        {"name": "Amazon", "rank": 6, "trend_signal": "rising", "notes": "Amazon DE首发价€169-199，德国科技媒体(winfuture/check-app/MOZ)独立评测背书"},
-        {"name": "AliExpress", "rank": 10, "trend_signal": "new_entry", "notes": "欧盟仓发货，€110起的C11入门款吸引价格敏感消费者"}
-      ],
-      "anomaly_reason": "一个中国品牌（JONR）在没有任何欧洲实体店、没有传统广告投放的情况下，仅通过TikTok Shop和Amazon DE，在德国和意大利两个市场同时打进了清洁家电品类的前列。更异常的是：德国科技媒体（以严苛著称）主动评测并给予了正面评价——'从结构上解决了异味问题'成为媒体原话。这代表'TikTok种草→科技媒体验证→Amazon成交'的新消费路径在大家电品类也能走通。",
-      "anomaly_score": 86,
-      "voc_analysis": {
-        "summary": "JONR在欧洲的核心竞争力不是'便宜'——而是'解决了洗地机品类的结构性问题'。传统洗地机最大的痛点是滚刷异味——JONR H2 Pro通过温水自清洁+热风烘干从根本上解决了这个问题，德国媒体用'strukturell gelöst'（从结构上解决）来评价。消费者最关心三点：真的能自清洁不臭吗？180°平躺真的能进沙发底吗？售后怎么办？第三点是目前最大短板——品牌在欧洲没有服务网络。",
-        "key_themes": [
-          "异味终结者——温水自清洁+烘干是JONR最核心的差异化，德国消费者对'不臭的洗地机'有强烈需求",
-          "180°平躺设计——可以清洁沙发和床底，这在欧洲小户型公寓中是真实痛点",
-          "品牌信任仍在建立——Trustpilot 3.7/5，部分激励评价影响透明度",
-          "与Tineco的对比——消费者在做JONR vs Tineco的二选一，JONR赢在价格（便宜40%），Tineco赢在品牌信任",
-          "售后焦虑——'在欧洲没有维修点，坏了怎么办？'是多条差评的核心担忧"
-        ],
-        "sentiment": {"positive_pct": 62, "neutral_pct": 25, "negative_pct": 13},
-        "sources": ["winfuture.de 深度测评", "check-app.de 对比评测", "MOZ.de 洗地机横评", "TikTok DE/IT 评论区", "Trustpilot", "Amazon DE reviews"],
-        "quotes": [
-          {"text": "Der JONR H2 Pro löst das Geruchsproblem, das viele Saugwischer plagt, auf strukturellem Weg — und das funktioniert im Test nachweislich.", "source": "winfuture.de, May 2026"},
-          {"text": "Really impressed with JONR. The vacuum works great, has strong suction, and is very easy to use. Great value for the price.", "source": "Trustpilot, Mar 2026"},
-          {"text": "180°平躺设计太好用了，终于能清洁沙发底下了。但污水箱真的太小，大户型中途要倒好几次。", "source": "Amazon DE review"},
-          {"text": "用了两个月电机坏了，联系客服说要从中国寄配件等3周。东西本身不错但售后是硬伤。", "source": "Amazon DE review"}
-        ]
-      },
-      "business_analysis": {
-        "opportunity_level": "🔥 必跟",
-        "profit_potential": "高利润+高频耗材。整机生产成本€60-90（含电机+电池+模具），零售€169-299，毛利50-60%。真正的利润在耗材：滚刷替换装（€15-25/个，每3-6月更换）、清洁液（€8-12/瓶，每月一瓶）、HEPA滤网（€12-18/个，每6月更换）。耗材毛利率70%+。",
-        "supply_complexity": "中（需要找工厂）",
-        "competition_density": "温和（有空间）",
-        "trend_sustainability": "长期趋势。欧洲硬地板（木地板/瓷砖）比例远高于美国（地毯为主），洗地机是天然的高频需求品类。Tineco售价€300-500的价格带留下了€150-250的巨大空白，JONR正在填补这个位置。但品牌必须解决欧洲本地售后网络，否则增长会遇到天花板。",
-        "actionable_tips": [
-          "耗材订阅制才是真正的商业模式——机器本身可以薄利多销，耗材（滚刷+清洁液+滤网）的订阅制才是LTV发动机",
-          "必须在德国/波兰/意大利建立本地售后仓库——目前'配件等3周从中国发'是最大的口碑杀手",
-          "多语言说明书是硬门槛——法国Cdiscount平台63.5%的小家电退货原因是缺少法语说明书",
-          "CE+RoHS+WEEE+德国GS标志——四大认证齐全才有资格和Tineco正面竞争"
-        ]
-      }
-    },
-    {
-      "rank": 6,
-      "region": "eu",
-      "name": "波西米亚刺绣芭蕾平底鞋",
-      "category": "时尚 / 鞋履",
-      "price_range": "€25 – €120",
-      "platforms": [
-        {"name": "ASOS", "rank": 3, "trend_signal": "spiking", "notes": "ALDO Joselie刺绣款售罄，ASOS DESIGN embellished系列热卖"},
-        {"name": "Zalando", "rank": 5, "trend_signal": "rising", "notes": "Zalando Trend Forecast 2026确认'Nautical Boho'为年度趋势，水手帽+217%"},
-        {"name": "TikTok", "rank": 12, "trend_signal": "new_entry", "notes": "#balletflats #bohostyle 话题在欧洲时尚KOL中快速扩散"}
-      ],
-      "anomaly_reason": "这不是一个品类的爆发，而是两个宏观趋势的完美交叉：芭蕾平底鞋复兴（Sandy Liang、Giambattista Valli SS26秀场）+ 波西米亚回潮（Google搜索+25%）。当两个趋势在同一个SKU上汇合，就产生了'刺绣芭蕾平底鞋'这个异常信号。更关键的是：这是由欧洲时尚品牌（Chloé、Isabel Marant）驱动的全球趋势——欧洲是策源地而非跟随者。ASOS上关键款式售罄说明需求已超供给。",
-      "anomaly_score": 80,
-      "voc_analysis": {
-        "summary": "刺绣芭蕾平底鞋的消费者年龄跨度极大——千禧一代穿它配阔腿牛仔裤和亚麻西装做'精致波西米亚'，Z世代穿它混搭机车夹克做'摩托波西米亚'，新娘穿它替代高跟鞋做婚礼鞋。这个品类最大的优势是'场景通吃'——上班、约会、婚礼、度假都能穿，季节从春到秋覆盖6个月。最大的使用反馈是'比想象中更百搭'——消费者买之前担心太花哨，买之后发现几乎配任何纯色衣服都好看。",
-        "key_themes": [
-          "刺绣=灵魂——消费者不是在买平底鞋，是在买'鞋面上的艺术品'，花卉刺绣是最大卖点",
-          "舒适不妥协——芭蕾平底鞋自带舒适属性，不像高跟鞋需要'忍受'，全天穿着无压力",
-          "婚礼场景崛起——越来越多的新娘选择刺绣平底鞋替代婚鞋，伴娘团统一穿同系列",
-          "尺码是壁垒——欧洲码（35-42）和亚洲脚型差异大，跨境退货率高",
-          "快时尚vs手工——ASOS/Zara的€25-40机制款和Etsy独立设计师的€80-120手工款是两条平行赛道"
-        ],
-        "sentiment": {"positive_pct": 75, "neutral_pct": 18, "negative_pct": 7},
-        "sources": ["Hello! Magazine 2026 trend report", "Zalando Trend Forecast 2026", "ASOS Style Feed", "Byrdie trend analysis", "Heuritech boho trend data", "TikTok #embroideredballetflats"],
-        "quotes": [
-          {"text": "Ballet flats are entering their glam era this spring — studs, rhinestones, and floral embroidery are taking center stage.", "source": "Byrdie, Spring 2026"},
-          {"text": "I bought the ALDO Joselie embroidered flats for a wedding and ended up wearing them to work, brunch, and date night. Most versatile shoe I own.", "source": "ASOS review"},
-          {"text": "Boho is having a major comeback — Chloé and Isabel Marant are leading this romantic revival, and embroidered flats are the entry point.", "source": "Heuritech trend analysis, 2026"}
-        ]
+        "summary": "毕业生打开盒子流泪——买的是被认可和仪式感。57%大学生失业率=求暴富刚需",
+        "key_themes": ["毕业焦虑", "求暴富玄学", "仪式感", "被认可渴望"],
+        "sentiment": { "positive_pct": 88, "neutral_pct": 8, "negative_pct": 4 },
+        "sources": ["TikTok评论", "Reddit r/college"],
+        "quotes": [{ "text": "You are so proud of you.", "source": "产品卡片文案" }]
       },
       "business_analysis": {
         "opportunity_level": "⭐ 关注",
-        "profit_potential": "中高利润。1688刺绣芭蕾鞋出厂价¥25-50（€3-6），零售€25-45（快时尚线），毛利率70-80%。设计师手作款出厂¥80-150（€10-19），零售€80-120，毛利率50-60%但品牌溢价高。最大的隐性成本是退货——欧洲鞋类退货率15-20%，跨境尺码问题会把这个数字推到30%+。",
-        "supply_complexity": "低（现货充足）",
-        "competition_density": "红海（激烈）",
-        "trend_sustainability": "中期趋势。芭蕾平底鞋作为一个品类不会消失（已流行3年+），但'刺绣+波西米亚'这个具体组合的热度窗口大约12-18个月。下一个迭代方向可能是蕾丝镂空、铆钉朋克、或金属色，需要持续追踪Zalando和ASOS的搜索数据。",
-        "actionable_tips": [
-          "欧洲尺码体系是核心竞争力——必须做EU 35-42全码，并提供详细的脚长-码数对照表（含宽脚/窄脚建议）",
-          "做'婚礼系列'垂直线——这个场景客单价高（€60-120），退货率低（新娘不会随便退婚鞋），且能建立品牌",
-          "在ASOS和Zalando同时铺货——ASOS覆盖英美，Zalando覆盖欧洲大陆，双平台覆盖全区域",
-          "必须是真皮或高品质PU——鞋类在欧盟有严格的REACH化学品限制，劣质材料会被海关扣货"
-        ]
+        "profit_potential": "60-75% 毛利",
+        "supply_complexity": "低（印刷厂）",
+        "competition_density": "温和",
+        "trend_sustainability": "纯季节性（5-6月），需扩展场景",
+        "actionable_tips": ["⚠️ 纯季节性，5-6月后断崖", "扩展婚礼/生日/入职版本", "溢价在文案和开箱体验"]
+      }
+    },
+    {
+      "rank": 3, "region": "us",
+      "name": "极端天气应急包 · Extreme Weather Kit",
+      "category": "户外 / 生存装备",
+      "price_range": "$39 – $299",
+      "platforms": [
+        { "name": "TikTok", "trend_signal": "spiking", "notes": "#PrepperTok 12亿播放" },
+        { "name": "Amazon", "trend_signal": "rising" },
+        { "name": "Walmart", "trend_signal": "new_entry" }
+      ],
+      "anomaly_reason": "生存装备在时尚平台TikTok爆红，政府税收优惠变相补贴",
+      "anomaly_score": 78,
+      "voc_analysis": {
+        "summary": "从'怪人囤货'变'体面中产标配'。72%美国人对气候的无力感→买包获得控制感",
+        "key_themes": ["气候焦虑", "中产体面", "政府补贴", "控制感"],
+        "sentiment": { "positive_pct": 60, "neutral_pct": 25, "negative_pct": 15 },
+        "sources": ["Reddit r/preppers", "Made-in-China Insights"],
+        "quotes": [{ "text": "Five years ago they'd think you were paranoid. Now they'll ask where you got it.", "source": "@PrepWithParker" }]
+      },
+      "business_analysis": {
+        "opportunity_level": "⭐ 关注",
+        "profit_potential": "50-65% 毛利",
+        "supply_complexity": "中（多品类组包）",
+        "competition_density": "温和",
+        "trend_sustainability": "长期——气候焦虑持续加重",
+        "actionable_tips": ["卖安心感而非求生工具", "核心三件套：太阳能充电宝+手摇收音机+冻干食品", "州税收优惠是天然营销素材"]
+      }
+    },
+    {
+      "rank": 1, "region": "eu",
+      "name": "园艺多功能凳 · Garden Kneeler Seat",
+      "category": "园艺工具 / 家居",
+      "price_range": "£25 – £59 / €29 – €69",
+      "platforms": [
+        { "name": "TikTok EU", "trend_signal": "spiking" },
+        { "name": "Amazon UK", "trend_signal": "rising" },
+        { "name": "Allegro", "trend_signal": "new_entry", "notes": "波兰园艺5M+活跃SKU" }
+      ],
+      "anomaly_reason": "园艺工具在TikTok年轻平台爆红，老龄化+园艺热+母亲节三重叠加",
+      "anomaly_score": 80,
+      "voc_analysis": {
+        "summary": "膝盖救星+母亲节完美礼物。TikTok上弯腰→优雅坐着的before/after视频最火",
+        "key_themes": ["老年友好", "母亲节礼物", "园艺舒适", "二合一设计"],
+        "sentiment": { "positive_pct": 85, "neutral_pct": 10, "negative_pct": 5 },
+        "sources": ["Amazon UK评论", "Coopers of Stortford"],
+        "quotes": [{ "text": "Perfect gift for my 72-year-old mum — she hasn't stopped using it.", "source": "Amazon UK" }]
+      },
+      "business_analysis": {
+        "opportunity_level": "🔥 必跟",
+        "profit_potential": "55-70% 毛利",
+        "supply_complexity": "中（找钢管厂）",
+        "competition_density": "蓝海",
+        "trend_sustainability": "长期——欧洲老龄化+园艺文化",
+        "actionable_tips": ["主攻UK+DE Amazon+Allegro", "母亲节前1个月加大TikTok投放", "配套园艺工具套装拉高客单价"]
+      }
+    },
+    {
+      "rank": 2, "region": "eu",
+      "name": "智能宠物喂食器（法语语音） · Smart Pet Feeder",
+      "category": "宠物科技 / 智能家居",
+      "price_range": "€59 – €149",
+      "platforms": [
+        { "name": "Cdiscount", "trend_signal": "spiking", "notes": "+52.4%年增长, €210M GMV" },
+        { "name": "Amazon DE", "trend_signal": "rising" },
+        { "name": "Allegro", "trend_signal": "new_entry" }
+      ],
+      "anomaly_reason": "法国宠物智能硬件年增52.4%，法语语音门槛挡住90%中国卖家",
+      "anomaly_score": 76,
+      "voc_analysis": {
+        "summary": "法国消费者愿为法语语音多付18-25%，63.5%退货因缺少法语说明书",
+        "key_themes": ["法语本地化", "份量控制", "远程喂食", "宠物健康管理"],
+        "sentiment": { "positive_pct": 78, "neutral_pct": 15, "negative_pct": 7 },
+        "sources": ["Cdiscount FR评论", "Dev.to评测"],
+        "quotes": [{ "text": "Enfin un distributeur qui parle français!", "source": "Cdiscount评论" }]
+      },
+      "business_analysis": {
+        "opportunity_level": "🔥 必跟",
+        "profit_potential": "55-70% 毛利",
+        "supply_complexity": "中（方案集成）",
+        "competition_density": "蓝海",
+        "trend_sustainability": "长期——宠物人性化趋势",
+        "actionable_tips": ["法语语音是第一壁垒", "CE+RoHS认证必需品", "搭配GPS追踪器做宠物安全套装"]
+      }
+    },
+    {
+      "rank": 1, "region": "global",
+      "name": "解压捏捏乐盲盒 · Squishy Blind Box",
+      "category": "解压玩具 / 情绪消费",
+      "price_range": "$6 – $15 / £5 – £12",
+      "platforms": [
+        { "name": "TikTok US", "trend_signal": "spiking", "notes": "$600K/月 GMV" },
+        { "name": "TikTok EU", "trend_signal": "spiking", "notes": "NeeDoh £6炒到£50" },
+        { "name": "Amazon", "trend_signal": "rising" },
+        { "name": "Five Below/ASOS", "trend_signal": "new_entry" }
+      ],
+      "anomaly_reason": "唯一美欧6+平台同时爆发的品类。2026怀旧周期+ASMR+盲盒三重驱动",
+      "anomaly_score": 90,
+      "voc_analysis": {
+        "summary": "重复挤压触发多巴胺，触觉=大脑最基础的安全信号。盲盒机制驱动复购和二手炒价",
+        "key_themes": ["ASMR内容", "盲盒收集", "触觉解压", "怀旧周期", "儿童→成人"],
+        "sentiment": { "positive_pct": 75, "neutral_pct": 18, "negative_pct": 7 },
+        "sources": ["Reddit", "Psychology Today", "Daily Mail"],
+        "quotes": [{ "text": "Six quid in the shop, fifty quid on Vinted.", "source": "Daily Mail UK" }]
+      },
+      "business_analysis": {
+        "opportunity_level": "🔥 必跟",
+        "profit_potential": "80%+ 毛利",
+        "supply_complexity": "低（PVA材质现货）",
+        "competition_density": "温和",
+        "trend_sustainability": "中长期——怀旧周期+触觉解压需求持久",
+        "actionable_tips": ["一个SKU吃美欧两个市场", "必做盲盒款（夜光/闪粉拉复购）", "⚠️ 包装印'不可加热'警告防TikTok挑战", "定价US$9.99 EU€7.99含VAT"]
       }
     }
   ],
   "visual": {
-    "color_palette": ["#0d0d1a", "#ff6b6b", "#1a1a2e", "#4ecdc4"],
-    "page_style": "梦幻赛博美学 — 深色底配暖珊瑚粉（美国区）和冷海洋蓝（欧洲区）双色渐变，中央全域爆款区域用金色光效连接",
-    "cover_image_description": "梦幻双屏数字插画：左侧美国区商品漂浮在温暖的珊瑚色和琥珀色光芒中——香草剃毛油瓶、旋转解压戒指、带能量线的智能插头；右侧欧洲区商品在冷色调海洋蓝光中——刺绣波西米亚芭蕾鞋、流线型洗地吸尘器、带治疗红光的LED美容面罩。中央桥梁连接处，DRDENT美白贴片和红光面罩在两侧同时闪烁。柔和渐变，柔软粒子背景。"
+    "color_palette": ["#0a1628", "#ff6b6b", "#141f35"],
+    "page_style": "deep teal calming with warm coral accent"
   }
 }
