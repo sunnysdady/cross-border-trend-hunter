@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-05-18T09:00:00+08:00",
-  "total_days": 2,
+  "updated_at": "2026-05-19T12:00:00+08:00",
+  "total_days": 3,
   "days": [
+    {
+      "date": "2026-05-19",
+      "theme": "🎭 今天的爆款都在贩卖情绪",
+      "outliers_count": 6,
+      "top_product": "DRDENT 牙齿美白贴片 PAP Teeth Whitening Strips",
+      "top_category": "口腔护理 / 功效型美妆",
+      "cover_color": "#e94560"
+    },
     {
       "date": "2026-05-18",
       "theme": "🧘 今天的爆款都在偷走焦虑",
