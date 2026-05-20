@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-05-19T12:00:00+08:00",
-  "total_days": 3,
+  "updated_at": "2026-05-20T18:00:00+08:00",
+  "total_days": 4,
   "days": [
+    {
+      "date": "2026-05-20",
+      "theme": "🔮 今天的爆款都在贩卖情绪安全感",
+      "outliers_count": 6,
+      "top_product": "水晶疗愈手串 / Crystal Healing Bracelet",
+      "top_category": "情绪消费 / 灵性饰品",
+      "cover_color": "#d4a853"
+    },
     {
       "date": "2026-05-19",
       "theme": "🎭 今天的爆款都在贩卖情绪",
