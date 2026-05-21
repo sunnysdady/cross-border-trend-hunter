@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-05-20T18:00:00+08:00",
-  "total_days": 4,
+  "updated_at": "2026-05-21T12:00:00+08:00",
+  "total_days": 5,
   "days": [
+    {
+      "date": "2026-05-21",
+      "theme": "🎭 今天的爆款都在跨界叛逆",
+      "outliers_count": 6,
+      "top_product": "异形整蛊抱枕 / Custom Prank Pillow",
+      "top_category": "情绪消费 / 跨境品类跨界",
+      "cover_color": "#ff6b9d"
+    },
     {
       "date": "2026-05-20",
       "theme": "🔮 今天的爆款都在贩卖情绪安全感",
