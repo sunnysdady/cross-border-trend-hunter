@@ -229,8 +229,7 @@ function renderGrid(days) {
   }
 
   grid.innerHTML = days.map(d => `
-    <a href="daily/${d.date}.html" class="day-card"
-      <style>.day-card::before { background: ${d.cover_color || '#e94560'}; }</style>
+    <a href="daily/${d.date}.html" class="day-card" style="border-top:3px solid ${d.cover_color || '#e94560'};">
       <div class="day-card-date">${formatDate(d.date)}</div>
       <div class="day-card-theme">${d.theme}</div>
       <div class="day-card-meta">
