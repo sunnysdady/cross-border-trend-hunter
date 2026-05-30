@@ -1,35 +1,28 @@
 #!/bin/bash
-# Deploy script for Cross-Border Trend Hunter
-# Called after daily generation to push to GitHub
-# Vercel auto-deploys from the connected GitHub repo
+# Deploy script for Cross-Border Trend Hunter (Boom Catcher)
+# Commits the current repo state and pushes to GitHub.
+# Vercel auto-deploys from the connected GitHub repo (repo root).
+#
+# Usage (from anywhere inside the repo):
+#   ./scripts/deploy.sh
+# It auto-detects the repo root (the folder this script's parent lives in).
 
 set -e
 
-REPO_URL="${GITHUB_REPO_URL:-}"  # Set via env or hardcode
-SITE_DIR="$(cd "$(dirname "$0")/../site" && pwd)"
-DATA_DIR="$(cd "$(dirname "$0")/../data" && pwd)"
-TMP_DIR="$(cd "$(dirname "$0")/../.deploy-tmp" && pwd 2>/dev/null || mktemp -d)"
+# Repo root = parent of the scripts/ directory this file lives in
+REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$REPO_DIR"
 
-if [ -z "$REPO_URL" ]; then
-  echo "❌ GITHUB_REPO_URL not set. Usage: GITHUB_REPO_URL=git@github.com:user/repo.git ./deploy.sh"
+echo "🚀 Deploying Boom Catcher from: $REPO_DIR"
+
+if [ ! -d .git ]; then
+  echo "❌ $REPO_DIR is not a git repository. Run 'git init' and add your remote first."
   exit 1
 fi
 
-echo "🚀 Deploying to GitHub..."
+# Pull latest to avoid push conflicts (ignore failure on first run)
+git pull origin main --rebase -q 2>/dev/null || true
 
-# Clone fresh
-rm -rf "$TMP_DIR"
-git clone "$REPO_URL" "$TMP_DIR" --depth 1
-
-# Sync site files (preserve .git)
-rsync -av --delete --exclude='.git' "$SITE_DIR/" "$TMP_DIR/"
-
-# Sync data files
-mkdir -p "$TMP_DIR/data"
-rsync -av --delete "$DATA_DIR/" "$TMP_DIR/data/"
-
-# Commit & push
-cd "$TMP_DIR"
 git add -A
 
 if git diff --staged --quiet; then

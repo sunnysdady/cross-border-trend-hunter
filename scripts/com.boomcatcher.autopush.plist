@@ -2,11 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<!--
+  TEMPLATE ONLY — do NOT load this file directly.
+  The old version hardcoded "/Users/mac/..." which breaks on other accounts.
+  Run  `bash scripts/install-launchd.sh`  instead; it generates the real plist
+  in ~/Library/LaunchAgents/ with your correct home path filled in.
+-->
 <dict>
     <key>Label</key>
     <string>com.boomcatcher.autopush</string>
-    <key>Program</key>
-    <string>/Users/mac/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/sunnysdady/10 Projects/boom-catcher/scripts/auto-push.sh</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>__PUSH_SCRIPT__</string>
+    </array>
     <key>StartInterval</key>
     <integer>3600</integer>
     <key>RunAtLoad</key>
