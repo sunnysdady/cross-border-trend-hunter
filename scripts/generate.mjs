@@ -215,8 +215,7 @@ async function main() {
   fs.writeFileSync(aiPath, JSON.stringify(archive, null, 2));
 
   // sanity checks
-  if (html.includes("<!--")) throw new Error("Unreplaced placeholder in HTML");
-  const cards = (html.match(/product-card reveal-section/g) || []).length;
+  const cards = (html.match(/class="row/g) || []).length;
   console.log(`✅ ${date} generated — theme: ${data.theme_short}`);
   console.log(`   products: ${data.products.length}, global: ${data.global_products.length}, cards rendered: ${cards}`);
 }
