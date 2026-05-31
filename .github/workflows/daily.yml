@@ -1,0 +1,48 @@
+name: Daily Trend Generation
+
+on:
+  schedule:
+    # 01:00 UTC = 09:00 Asia/Shanghai. GitHub cron 可能延迟几分钟到半小时，属正常。
+    - cron: "0 1 * * *"
+  workflow_dispatch: {}   # 允许在 Actions 页面手动点 "Run workflow" 立即生成
+
+permissions:
+  contents: write          # 让内置 GITHUB_TOKEN 能把生成结果推回 main
+
+concurrency:
+  group: daily-generation
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Anthropic SDK
+        run: npm install @anthropic-ai/sdk@latest
+
+      - name: Generate today's report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: claude-sonnet-4-6
+        run: node scripts/generate.mjs
+
+      - name: Commit & push
+        run: |
+          git config user.name "Boom Catcher Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "📭 No changes to commit."
+            exit 0
+          fi
+          git commit -m "📦 Daily trend update: $(TZ=Asia/Shanghai date +%Y-%m-%d)"
+          git push
