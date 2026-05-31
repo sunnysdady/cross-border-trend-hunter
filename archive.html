@@ -4,253 +4,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>历史捕获 · 爆款捕手</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="description" content="爆款捕手历史捕获：每日异常爆款趋势的完整归档，可搜索、可按品类筛选。">
+<link rel="canonical" href="/archive.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="历史捕获 · 爆款捕手">
+<meta property="og:description" content="每日异常爆款趋势的完整归档，可搜索、可按品类筛选。">
+<meta name="theme-color" content="#2dd4bf">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232dd4bf'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle'%3E🎯%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-primary: #0f0f23;
-    --bg-card: #1a1a2e;
-    --bg-accent: #16213e;
-    --text-primary: #eaeaea;
-    --text-secondary: #a0a0b0;
-    --text-muted: #6c6c80;
-    --accent: #e94560;
-    --accent-glow: rgba(233, 69, 96, 0.3);
-    --gradient-hero: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    --border: rgba(255,255,255,0.08);
-    --shadow: 0 4px 24px rgba(0,0,0,0.3);
-    --radius: 12px;
-  }
-
-  .archive-header {
-    text-align: center; padding: 4rem 1.5rem 2rem;
-    background: var(--gradient-hero); border-bottom: 1px solid var(--border);
-  }
-
-  .archive-header h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, var(--text-primary), var(--accent));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .back-link {
-    display: inline-block; margin-top: 1rem;
-    color: var(--accent); text-decoration: none; font-size: 0.9rem;
-  }
-
-  .search-bar {
-    max-width: 500px; margin: 2rem auto 0;
-    position: relative;
-  }
-
-  .search-bar input {
-    width: 100%; padding: 0.8rem 1rem 0.8rem 2.5rem;
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); color: var(--text-primary);
-    font-size: 0.95rem; outline: none;
-    transition: border-color var(--transition);
-  }
-
-  .search-bar input:focus { border-color: var(--accent); }
-
-  .search-bar .search-icon {
-    position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%);
-    color: var(--text-muted);
-  }
-
-  .filters {
-    display: flex; gap: 0.5rem; flex-wrap: wrap;
-    justify-content: center; margin-top: 1rem;
-  }
-
-  .filter-chip {
-    padding: 0.35rem 0.9rem; border-radius: 20px;
-    border: 1px solid var(--border); font-size: 0.8rem;
-    cursor: pointer; color: var(--text-secondary);
-    background: transparent;
-    transition: all var(--transition);
-  }
-
-  .filter-chip:hover, .filter-chip.active {
-    background: var(--accent); border-color: var(--accent); color: #fff;
-  }
-
-  .archive-grid {
-    max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .day-card {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.5rem;
-    cursor: pointer; text-decoration: none; color: inherit;
-    transition: all var(--transition);
-    position: relative; overflow: hidden;
-  }
-
-  .day-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.15);
-  }
-
-  .day-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-
-  .day-card-date {
-    font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;
-  }
-
-  .day-card-theme {
-    font-family: Georgia, serif;
-    font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;
-  }
-
-  .day-card-meta {
-    display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-secondary);
-  }
-
-  .day-card-meta span { display: flex; align-items: center; gap: 0.25rem; }
-
-  .empty-state {
-    text-align: center; padding: 4rem 1.5rem; color: var(--text-muted);
-  }
-
-  .empty-state-emoji { font-size: 4rem; margin-bottom: 1rem; }
-
-  .stats-bar {
-    max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
-    display: flex; gap: 1rem; justify-content: center;
-    font-size: 0.85rem; color: var(--text-muted);
-  }
-
-  @media (max-width: 480px) {
-    .archive-grid { grid-template-columns: 1fr; }
-  }
+:root{
+  --bg:oklch(0.17 0.008 260);--surface:oklch(0.215 0.01 260);--surface-2:oklch(0.255 0.012 260);
+  --ink:oklch(0.96 0.004 260);--ink-2:oklch(0.82 0.008 260);--muted:oklch(0.68 0.01 260);
+  --line:oklch(1 0 0 / 0.10);--line-2:oklch(1 0 0 / 0.06);--accent:#2dd4bf;--on-accent:#06231d;
+  --maxw:72rem;
+  --display:"Bricolage Grotesque","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --body:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--on-accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--on-accent);padding:.6rem 1rem;border-radius:0 0 .5rem 0;z-index:50}
+.skip:focus{left:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.topbar{position:sticky;top:0;z-index:20;background:oklch(0.17 0.008 260 / 0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:700;letter-spacing:-0.01em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklch,var(--accent) 22%,transparent)}
+.brand small{color:var(--muted);font-weight:500;font-family:var(--mono);font-size:.74rem}
+.topbar a.back{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.4rem .7rem;border:1px solid var(--line);border-radius:.5rem;transition:border-color .2s,color .2s}
+.topbar a.back:hover{color:var(--ink);border-color:var(--accent)}
+.head{padding:clamp(2.4rem,6vw,4rem) 0 1.4rem}
+.head h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:-0.03em;text-wrap:balance}
+.head p{color:var(--ink-2);margin-top:.6rem;font-size:1.02rem;max-width:52ch}
+.controls{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin:1.8rem 0 0}
+.search{position:relative;flex:1 1 18rem}
+.search input{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:.7rem;color:var(--ink);font:inherit;padding:.7rem .9rem .7rem 2.4rem;outline:none;transition:border-color .2s}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{border-color:var(--accent)}
+.search .ic{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{appearance:none;font:inherit;cursor:pointer;background:transparent;color:var(--ink-2);border:1px solid var(--line);border-radius:2rem;padding:.4rem .9rem;font-size:.82rem;transition:color .2s,border-color .2s,background .2s}
+.chip:hover{color:var(--ink);border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+.stats{color:var(--muted);font-size:.84rem;font-family:var(--mono);margin:1.4rem 0 .4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));gap:1rem;padding:1rem 0 3rem}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.4rem;text-decoration:none;color:inherit;transition:transform .2s cubic-bezier(.16,1,.3,1),border-color .2s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--bar,var(--accent))}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .d{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-bottom:.5rem}
+.card .t{font-family:var(--display);font-weight:700;font-size:1.12rem;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance}
+.card .m{display:flex;gap:1rem;margin-top:.9rem;font-size:.8rem;color:var(--ink-2);font-family:var(--mono)}
+.empty{text-align:center;padding:4rem 1.5rem;color:var(--muted)}
+.empty .e{font-size:3rem;margin-bottom:1rem}
+.foot{border-top:1px solid var(--line-2);padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.8rem}
+.foot a{color:var(--accent);text-decoration:none}
+@media (prefers-reduced-motion:reduce){.card:hover{transform:none}}
 </style>
 </head>
 <body>
+<a class="skip" href="#grid">跳到列表</a>
+<div class="topbar"><div class="wrap">
+  <span class="brand"><span class="dot"></span>爆款捕手 <small>Boom Catcher</small></span>
+  <a class="back" href="index.html">← 回到今天</a>
+</div></div>
 
-<div class="archive-header">
-  <h1>📦 历史捕获</h1>
-  <p style="color:var(--text-secondary);margin-top:0.5rem;">每天捕捉一次，记录每一次爆款信号</p>
-  <a href="index.html" class="back-link">← 回到今天的捕获</a>
-
-  <div class="search-bar">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="搜索产品名、品类、主题..." oninput="applyFilters()">
+<header class="head"><div class="wrap">
+  <h1>历史捕获</h1>
+  <p>每天捕捉一次异常爆款信号，这里是完整归档。搜索产品、主题或品类，或按品类筛选。</p>
+  <div class="controls">
+    <div class="search">
+      <span class="ic" aria-hidden="true">🔍</span>
+      <input type="search" id="q" placeholder="搜索产品名、品类、主题…" aria-label="搜索历史捕获">
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="按品类筛选"></div>
   </div>
+  <p class="stats" id="stats" aria-live="polite"></p>
+</div></header>
 
-  <div class="filters" id="filters">
-    <button class="filter-chip active" data-category="all" onclick="setCategory('all', this)">全部</button>
-  </div>
-</div>
+<main id="grid" class="wrap"><div class="grid" id="cards">
+  <div class="empty"><div class="e">📭</div><p>正在加载历史数据…</p></div>
+</div></main>
 
-<div class="stats-bar" id="statsBar"></div>
-
-<div class="archive-grid" id="archiveGrid">
-  <div class="empty-state">
-    <div class="empty-state-emoji">📭</div>
-    <p>正在加载历史数据...</p>
-  </div>
-</div>
+<footer class="foot"><div class="wrap">
+  <p>🤖 由 GitHub Actions + Claude 每日自动生成 · <a href="index.html">回到今天的捕获 →</a></p>
+</div></footer>
 
 <script>
-let allDays = [];
-let activeCategory = 'all';
-
-async function loadArchive() {
-  try {
-    const resp = await fetch('data/archive-index.json');
-    if (!resp.ok) throw new Error('No archive yet');
-    const data = await resp.json();
-    allDays = data.days || [];
-    buildCategoryFilters();
-    applyFilters();
-    updateStats();
-  } catch (e) {
-    document.getElementById('archiveGrid').innerHTML =
-      '<div class="empty-state"><div class="empty-state-emoji">📭</div><p>还没有历史数据，等第一次生成后这里就会填满惊喜 ✨</p></div>';
+let all=[],active='all';
+const $=s=>document.querySelector(s);
+function fmt(d){const p=d.split('-');return p[0]+'年'+parseInt(p[1])+'月'+parseInt(p[2])+'日';}
+async function load(){
+  try{
+    const r=await fetch('data/archive-index.json'); if(!r.ok)throw 0;
+    const d=await r.json(); all=d.days||[];
+    buildFilters(); apply();
+  }catch(e){
+    $('#cards').innerHTML='<div class="empty"><div class="e">📭</div><p>还没有历史数据，第一次生成后这里就会填满。</p></div>';
   }
 }
-
-function buildCategoryFilters() {
-  const cats = new Set();
-  allDays.forEach(d => {
-    if (d.top_category) cats.add(d.top_category);
-  });
-  const container = document.getElementById('filters');
-  container.innerHTML = '<button class="filter-chip active" data-category="all" onclick="setCategory(\'all\', this)">全部</button>';
-  [...cats].sort().forEach(c => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-chip';
-    btn.dataset.category = c;
-    btn.textContent = c;
-    btn.onclick = () => setCategory(c, btn);
-    container.appendChild(btn);
-  });
-}
-
-function setCategory(cat, el) {
-  activeCategory = cat;
-  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  applyFilters();
-}
-
-function applyFilters() {
-  const query = document.getElementById('searchInput').value.toLowerCase();
-  let filtered = allDays;
-
-  if (activeCategory !== 'all') {
-    filtered = filtered.filter(d => d.top_category === activeCategory);
+function buildFilters(){
+  const cats=[...new Set(all.map(d=>d.top_category).filter(Boolean))].sort();
+  const f=$('#filters');
+  f.innerHTML='';
+  mk('all','全部');
+  cats.forEach(c=>mk(c,c));
+  function mk(val,label){
+    const b=document.createElement('button');
+    b.className='chip';b.textContent=label;b.type='button';
+    b.setAttribute('aria-pressed',String(val==='all'));
+    b.onclick=()=>{active=val;[...f.children].forEach(x=>x.setAttribute('aria-pressed',String(x===b)));apply();};
+    f.appendChild(b);
   }
-
-  if (query) {
-    filtered = filtered.filter(d =>
-      d.theme.toLowerCase().includes(query) ||
-      d.top_product.toLowerCase().includes(query) ||
-      d.top_category.toLowerCase().includes(query)
-    );
-  }
-
-  renderGrid(filtered);
 }
-
-function renderGrid(days) {
-  const grid = document.getElementById('archiveGrid');
-  if (days.length === 0) {
-    grid.innerHTML = '<div class="empty-state"><div class="empty-state-emoji">🔍</div><p>没有匹配的历史记录</p></div>';
-    return;
-  }
-
-  grid.innerHTML = days.map(d => `
-    <a href="daily/${d.date}.html" class="day-card" style="border-top:3px solid ${d.cover_color || '#e94560'};">
-      <div class="day-card-date">${formatDate(d.date)}</div>
-      <div class="day-card-theme">${d.theme}</div>
-      <div class="day-card-meta">
-        <span>🔥 ${d.outliers_count} 爆款</span>
-        <span>📦 ${d.top_product}</span>
-      </div>
-    </a>
-  `).join('');
+function apply(){
+  const q=$('#q').value.toLowerCase();
+  let list=all;
+  if(active!=='all')list=list.filter(d=>d.top_category===active);
+  if(q)list=list.filter(d=>[d.theme,d.top_product,d.top_category].some(v=>(v||'').toLowerCase().includes(q)));
+  render(list);
+  $('#stats').textContent='共 '+all.length+' 天 · 显示 '+list.length+' 条'+(all.length?' · 最新 '+fmt(all[0].date):'');
 }
-
-function updateStats() {
-  document.getElementById('statsBar').innerHTML =
-    `共 <strong>${allDays.length}</strong> 天数据 · 最新：${allDays.length ? formatDate(allDays[0].date) : '—'}`;
+function render(list){
+  const g=$('#cards');
+  if(!list.length){g.innerHTML='<div class="empty"><div class="e">🔍</div><p>没有匹配的历史记录</p></div>';return;}
+  g.innerHTML=list.map(d=>`
+    <a class="card" href="daily/${d.date}.html" style="--bar:${d.cover_color||'#2dd4bf'}">
+      <div class="d">${fmt(d.date)}</div>
+      <div class="t">${d.theme||''}</div>
+      <div class="m"><span>🔥 ${d.outliers_count||0} 爆款</span><span>📦 ${d.top_product||''}</span></div>
+    </a>`).join('');
 }
-
-function formatDate(d) {
-  const parts = d.split('-');
-  return `${parts[0]}年${parseInt(parts[1])}月${parseInt(parts[2])}日`;
-}
-
-loadArchive();
+$('#q').addEventListener('input',apply);
+load();
 </script>
 </body>
 </html>

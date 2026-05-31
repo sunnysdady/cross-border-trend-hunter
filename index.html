@@ -3,719 +3,613 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>爆款捕手 — 2026-05-31</title>
-<meta name="description" content="爆款捕手 — 每日自动扫描全球电商平台，捕捉异常爆款信号。🔬 今天的爆款都在重写「物理规律」">
-<link rel="stylesheet" href="css/style.css">
+<title>爆款捕手 2026-05-31 · 🧪 今天的爆款都在帮你「修理自己」</title>
+<meta name="description" content="爆款捕手 2026-05-31：每日扫描全球电商平台，捕捉异常爆款信号。🧪 今天的爆款都在帮你「修理自己」">
+<link rel="canonical" href="/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="爆款捕手 2026-05-31 · 🧪 今天的爆款都在帮你「修理自己」">
+<meta property="og:description" content="每日自动扫描全球电商平台，捕捉异常爆款信号，附 VOC 与商业可行性分析。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2dd4bf">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232dd4bf'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle'%3E🎯%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-primary: #050c14;
-    --bg-card: #0a1929;
-    --bg-accent: #071525;
-    --accent: #f97316;
-    --accent-glow: rgba(249,115,22,0.13);
-    --gradient-hero: linear-gradient(135deg,#f97316 0%,#fb923c 40%,#fbbf24 80%,#facc15 100%);
-    --border: rgba(255,255,255,0.06);
-    --text-primary: #e8e6f0;
-    --text-secondary: #b0adc0;
-    --text-muted: #6e6b80;
-    --positive: #4ade80;
-    --neutral: #facc15;
-    --negative: #f87171;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height:1.6; overflow-x:hidden; }
-  .bg-particles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
-  .loading-overlay { position:fixed; inset:0; background:var(--bg-primary); z-index:9999; display:flex; align-items:center; justify-content:center; transition:opacity 0.5s; }
-  .loading-overlay.hidden { opacity:0; pointer-events:none; }
-  .loading-spinner { width:40px; height:40px; border:3px solid rgba(255,255,255,0.1); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; }
-  @keyframes spin { to { transform:rotate(360deg); } }
-  @keyframes bounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+:root{
+  --bg:oklch(0.17 0.008 260); --surface:oklch(0.215 0.01 260); --surface-2:oklch(0.255 0.012 260);
+  --ink:oklch(0.96 0.004 260); --ink-2:oklch(0.82 0.008 260); --muted:oklch(0.68 0.01 260);
+  --line:oklch(1 0 0 / 0.10); --line-2:oklch(1 0 0 / 0.06);
+  --accent:#2dd4bf; --on-accent:#0b0b0c;
+  --pos:oklch(0.78 0.15 150); --neg:oklch(0.70 0.17 25); --neu:oklch(0.72 0.02 260);
+  --z-sticky:100;
+  --maxw:62rem;
+  --display:"Bricolage Grotesque","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --body:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
 
-  .hero { position:relative; z-index:1; text-align:center; padding:4rem 1.5rem 2rem; }
-  .hero-date { font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem; letter-spacing:0.05em; }
-  .hero-box { display:inline-block; cursor:pointer; perspective:800px; margin-bottom:1rem; }
-  .hero-box-inner { position:relative; width:120px; height:120px; transition:transform 0.8s; transform-style:preserve-3d; }
-  .hero-box.opened .hero-box-inner { transform:rotateY(180deg); }
-  .hero-box-front, .hero-box-back { position:absolute; inset:0; backface-visibility:hidden; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--bg-card); border:2px solid var(--border); }
-  .hero-box-front { font-size:3rem; }
-  .hero-box-back { transform:rotateY(180deg); background:var(--bg-accent); border-color:var(--accent); }
-  .hero-box-label { font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem; transition:opacity 0.5s; }
-  .hero-title { font-size:clamp(2rem,5vw,3.2rem); font-weight:800; letter-spacing:-0.02em; margin:1rem 0 0.5rem; background:var(--gradient-hero); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .hero-theme { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto 2rem; }
-  .hero-stats { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; }
-  .hero-stat { background:var(--bg-card); border-radius:14px; padding:1rem 1.5rem; border:1px solid var(--border); min-width:110px; }
-  .hero-stat-value { font-size:1.8rem; font-weight:700; color:var(--accent); }
-  .hero-stat-label { font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem; }
+/* skip link */
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--on-accent);padding:.6rem 1rem;border-radius:0 0 .5rem 0;z-index:200}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
-  .date-nav { position:relative; z-index:1; padding:0.5rem 1.5rem; text-align:center; }
-  .date-nav a { transition:all 0.2s; }
-  .date-nav a:hover { filter:brightness(1.3); }
+/* top bar */
+.topbar{position:sticky;top:0;z-index:var(--z-sticky);background:oklch(0.17 0.008 260 / 0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:700;letter-spacing:-0.01em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklch,var(--accent) 22%,transparent)}
+.brand small{color:var(--muted);font-weight:500;font-family:var(--mono);font-size:.74rem;letter-spacing:0}
+.topbar a.arch{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.4rem .7rem;border:1px solid var(--line);border-radius:.5rem;transition:border-color .2s,color .2s}
+.topbar a.arch:hover{color:var(--ink);border-color:var(--accent)}
 
-  .tab-nav { position:relative; z-index:1; display:flex; gap:0.5rem; justify-content:center; padding:1rem 1.5rem 0; flex-wrap:wrap; }
-  .tab-btn { padding:0.5rem 1.4rem; border-radius:20px; border:1px solid var(--border); background:var(--bg-card); color:var(--text-secondary); cursor:pointer; font-size:0.9rem; transition:all 0.25s; }
-  .tab-btn:hover { border-color:var(--accent); color:var(--text-primary); }
-  .tab-btn.active { background:var(--accent-glow); border-color:var(--accent); color:var(--accent); font-weight:600; }
-  .tab-global { border-color:rgba(255,140,66,0.3); }
+/* hero */
+.hero{padding:clamp(2.6rem,7vw,5rem) 0 clamp(1.4rem,3vw,2.2rem)}
+.hero .date{font-family:var(--mono);font-size:.82rem;color:var(--muted);letter-spacing:.02em}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7vw,4.5rem);line-height:1.02;letter-spacing:-0.035em;margin:.5rem 0 .1rem;text-wrap:balance}
+.hero h1 .sub{display:block;font-size:.3em;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-top:.5rem;font-family:var(--mono)}
+.theme-line{font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--ink-2);max-width:46ch;margin:1.1rem 0 1.6rem;text-wrap:pretty}
+.theme-line .em{color:var(--accent);font-weight:600}
 
-  .products-section { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:1rem 1.5rem 3rem; display:none; }
-  .products-section.active { display:block; }
-  .section-title { font-size:1.4rem; margin-bottom:1.5rem; padding-bottom:0.5rem; border-bottom:2px solid var(--accent); display:inline-block; }
-  .product-card { background:var(--bg-card); border-radius:16px; padding:1.5rem; margin-bottom:1.5rem; border:1px solid var(--border); transition:border-color 0.3s, box-shadow 0.3s; }
-  .product-card:hover { border-color:var(--accent); box-shadow:0 0 30px var(--accent-glow); }
-  .product-rank { display:inline-block; background:var(--gradient-hero); color:#fff; font-weight:800; font-size:0.85rem; padding:0.2rem 0.8rem; border-radius:10px; margin-bottom:0.75rem; }
-  .product-image-wrap { display:flex; align-items:center; justify-content:center; width:100%; height:80px; background:var(--bg-accent); border-radius:12px; margin:0.5rem 0 0.75rem; text-decoration:none; font-size:2.5rem; transition:all 0.3s; border:1px dashed var(--border); }
-  .product-image-wrap:hover { border-color:var(--accent); background:rgba(255,107,157,0.08); }
-  .product-header { display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; }
-  .product-name { font-size:1.15rem; font-weight:700; color:var(--text-primary); }
-  .product-category { display:inline-block; font-size:0.75rem; color:var(--accent); background:var(--accent-glow); padding:0.15rem 0.6rem; border-radius:10px; margin-top:0.3rem; }
-  .product-price { font-size:1rem; font-weight:600; color:var(--accent); margin:0.5rem 0; }
-  .platform-badges { display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.75rem; }
-  .platform-badge { font-size:0.7rem; padding:0.2rem 0.6rem; border-radius:10px; background:rgba(255,255,255,0.05); color:var(--text-secondary); border:1px solid var(--border); }
-  .anomaly-callout { background:var(--bg-accent); border-radius:12px; padding:0.75rem 1rem; margin:0.75rem 0; font-size:0.85rem; line-height:1.5; border-left:3px solid var(--accent); }
-  .anomaly-score { display:block; margin-top:0.4rem; font-size:0.75rem; color:var(--accent); font-weight:600; }
+/* blind box (kept as delight, NOT a visibility gate) */
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.box{appearance:none;background:none;border:0;cursor:pointer;perspective:700px;flex-shrink:0}
+.box-inner{position:relative;width:104px;height:104px;transition:transform .9s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d}
+.box[aria-pressed="true"] .box-inner{transform:rotateY(180deg)}
+.box-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surface)}
+.box-front{font-size:2.6rem}
+.box-back{transform:rotateY(180deg);background:var(--surface-2);border-color:var(--accent);gap:.15rem}
+.box-back .be{font-size:1.7rem}
+.box-back .bn{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:1rem}
+.box-back .bl{font-size:.66rem;color:var(--muted)}
+.box-hint{display:block;margin-top:.5rem;font-size:.7rem;color:var(--muted);font-family:var(--mono)}
 
-  .voc-section { margin:1rem 0; padding:0.75rem; background:rgba(255,255,255,0.02); border-radius:10px; }
-  .voc-section h4 { font-size:0.9rem; margin-bottom:0.5rem; }
-  .voc-themes { display:flex; gap:0.4rem; flex-wrap:wrap; margin:0.5rem 0; }
-  .voc-theme-tag { font-size:0.7rem; padding:0.15rem 0.5rem; border-radius:8px; background:rgba(255,107,157,0.1); color:var(--accent); }
-  .voc-quote { font-size:0.8rem; color:var(--text-secondary); font-style:italic; padding:0.4rem 0; border-left:2px solid var(--border); padding-left:0.6rem; margin:0.3rem 0; }
-  .voc-quote-source { font-size:0.65rem; color:var(--text-muted); margin-left:0.6rem; }
-  .sentiment-bar { display:flex; height:6px; border-radius:3px; overflow:hidden; margin-top:0.5rem; background:rgba(255,255,255,0.05); }
-  .sentiment-positive { background:var(--positive); }
-  .sentiment-neutral { background:var(--neutral); }
-  .sentiment-negative { background:var(--negative); }
+/* stat strip in hero */
+.kpis{display:flex;gap:0;border:1px solid var(--line);border-radius:.8rem;overflow:hidden;margin-top:.4rem}
+.kpi{flex:1;padding:.85rem 1rem;border-right:1px solid var(--line-2)}
+.kpi:last-child{border-right:0}
+.kpi b{display:block;font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--ink)}
+.kpi span{font-size:.72rem;color:var(--muted)}
 
-  .biz-section { display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; margin:0.75rem 0; }
-  .biz-card { background:rgba(255,255,255,0.03); border-radius:10px; padding:0.6rem; text-align:center; }
-  .biz-card-label { font-size:0.65rem; color:var(--text-muted); margin-bottom:0.25rem; }
-  .biz-card-value { font-size:0.8rem; font-weight:600; color:var(--text-primary); }
-  .opportunity-badge { display:inline-block; padding:0.15rem 0.6rem; border-radius:8px; font-size:0.8rem; font-weight:700; }
-  .opp-must { background:rgba(74,222,128,0.15); color:#4ade80; }
-  .opp-watch { background:rgba(250,204,21,0.15); color:#facc15; }
-  .opp-wait { background:rgba(148,163,184,0.15); color:#94a3b8; }
-  .opp-caution { background:rgba(248,113,113,0.15); color:#f87171; }
+/* tabs */
+.tabs{position:sticky;top:56px;z-index:calc(var(--z-sticky) - 1);background:oklch(0.17 0.008 260 / 0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2);margin-top:1.4rem}
+.tabs .wrap{display:flex;gap:.4rem;padding-top:.6rem;padding-bottom:.6rem;overflow-x:auto}
+.tab{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;background:transparent;color:var(--ink-2);border:1px solid var(--line);border-radius:2rem;padding:.45rem 1.1rem;font-size:.88rem;transition:color .2s,border-color .2s,background .2s}
+.tab:hover{color:var(--ink);border-color:var(--accent)}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
 
-  .tips-list { list-style:none; padding:0; margin-top:0.75rem; }
-  .tips-list li { font-size:0.8rem; padding:0.35rem 0; border-bottom:1px solid var(--border); color:var(--text-secondary); }
-  .tips-list li:last-child { border-bottom:none; }
-  .tips-list li::before { content:'💡 '; }
+/* panels */
+.panel{padding:clamp(1.6rem,4vw,2.6rem) 0 1rem}
+.panel[hidden]{display:none}
+.panel-intro{color:var(--muted);font-size:.92rem;margin-bottom:1.6rem;max-width:60ch}
 
-  .source-links { margin-top:0.75rem; padding:0.75rem; background:rgba(255,255,255,0.02); border-radius:10px; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; }
-  .source-links-label { font-size:0.75rem; color:var(--text-muted); white-space:nowrap; }
-  .source-link { font-size:0.75rem; padding:0.25rem 0.6rem; border-radius:8px; background:rgba(255,255,255,0.05); color:var(--text-secondary); text-decoration:none; border:1px solid var(--border); transition:all 0.2s; white-space:nowrap; }
-  .source-link:hover { border-color:var(--accent); color:var(--accent); background:var(--accent-glow); }
+/* rows */
+.row{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:clamp(1.2rem,3vw,1.8rem);margin-bottom:1.3rem}
+.row-hero{background:var(--surface-2);border-color:color-mix(in oklch,var(--accent) 40%,var(--line))}
+.row-head{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:start}
+.rank{display:flex;flex-direction:column;gap:.3rem;align-items:flex-start}
+.rank-emoji{font-size:2rem;line-height:1}
+.rank-tag{font-family:var(--mono);font-size:.68rem;color:var(--accent);border:1px solid color-mix(in oklch,var(--accent) 35%,transparent);padding:.12rem .45rem;border-radius:.4rem;white-space:nowrap}
+.row-title h3{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.2;letter-spacing:-0.02em;text-wrap:balance}
+.row-hero .row-title h3{font-size:clamp(1.5rem,3.4vw,2.05rem)}
+.cat{color:var(--muted);font-size:.82rem;margin-top:.25rem}
+.row-img{flex-shrink:0;width:60px;height:60px;display:grid;place-items:center;font-size:1.8rem;background:var(--bg);border:1px solid var(--line);border-radius:.7rem;text-decoration:none;transition:border-color .2s}
+.row-img:hover{border-color:var(--accent)}
 
-  .site-footer { position:relative; z-index:1; text-align:center; padding:2rem 1.5rem; border-top:1px solid var(--border); margin-top:1rem; }
-  .archive-link { display:inline-block; margin-top:0.5rem; padding:0.4rem 1.2rem; border-radius:14px; background:var(--accent-glow); color:var(--accent); text-decoration:none; font-size:0.85rem; border:1px solid var(--accent); transition:all 0.2s; }
-  .archive-link:hover { background:rgba(255,107,157,0.2); }
+/* stats grid */
+.stats{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0}
+.stat{flex:1 1 8rem;background:var(--bg);border:1px solid var(--line-2);border-radius:.6rem;padding:.6rem .75rem}
+.stat-k{display:block;font-size:.68rem;color:var(--muted);margin-bottom:.25rem}
+.stat-v{font-size:.92rem;font-weight:600;color:var(--ink)}
+.stat-v.score{font-family:var(--mono);font-size:1.45rem;font-weight:700;color:var(--accent)}
+.stat-v.score small{font-size:.6rem;color:var(--muted);font-weight:500}
+.opp{display:inline-block;font-size:.8rem;font-weight:700;padding:.12rem .5rem;border-radius:.4rem}
+.opp-must{background:color-mix(in oklch,var(--pos) 22%,transparent);color:var(--pos)}
+.opp-watch{background:color-mix(in oklch,oklch(0.8 0.13 90) 20%,transparent);color:oklch(0.85 0.13 90)}
+.opp-wait{background:oklch(1 0 0 / 0.08);color:var(--ink-2)}
+.opp-caution{background:color-mix(in oklch,var(--neg) 20%,transparent);color:var(--neg)}
 
-  .reveal-section { opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s; }
-  .reveal-section.visible { opacity:1; transform:translateY(0); }
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.tag{font-size:.72rem;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);border-radius:.4rem;padding:.18rem .55rem;font-family:var(--mono)}
 
-  .eu-compliance { background:rgba(74,144,226,0.08); border-radius:8px; padding:0.5rem 0.75rem; margin-top:0.5rem; font-size:0.75rem; color:#7eb8ff; border:1px solid rgba(74,144,226,0.2); }
-  .eu-compliance::before { content:'🇪🇺 合规提示：'; font-weight:600; }
+.anomaly{background:var(--bg);border:1px solid var(--line-2);border-radius:.7rem;padding:.9rem 1rem;font-size:.92rem;color:var(--ink-2);line-height:1.65}
+.anomaly-k{display:block;font-size:.72rem;font-weight:700;color:var(--accent);margin-bottom:.35rem;letter-spacing:.01em}
 
-  @media (max-width:640px) {
-    .biz-section { grid-template-columns:repeat(2,1fr); }
-    .hero { padding:2.5rem 1rem 1.5rem; }
-    .product-card { padding:1rem; }
-  }
+.voc{margin:1.1rem 0;padding-top:1.1rem;border-top:1px solid var(--line-2)}
+.voc h4{font-family:var(--display);font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.voc-sum{font-size:.9rem;color:var(--ink-2);line-height:1.65}
+.themes{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0}
+.theme{font-size:.72rem;color:var(--accent);background:color-mix(in oklch,var(--accent) 12%,transparent);border-radius:.4rem;padding:.16rem .5rem}
+.quote{font-size:.86rem;color:var(--ink-2);font-style:italic;padding:.5rem 0 .5rem .9rem;border-left:2px solid var(--line);margin:.5rem 0}
+.quote cite{display:block;font-style:normal;font-size:.7rem;color:var(--muted);margin-top:.3rem}
+.senti{margin:.9rem 0 .4rem}
+.senti-bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:oklch(1 0 0 / 0.06)}
+.senti-bar i{display:block;height:100%}
+.s-pos{background:var(--pos)}.s-neu{background:var(--neu)}.s-neg{background:var(--neg)}
+.senti-key{display:block;font-size:.72rem;color:var(--muted);margin-top:.35rem;font-family:var(--mono)}
+.s-pos-t{color:var(--pos)}.s-neg-t{color:var(--neg)}
+.srcline{font-size:.7rem;color:var(--muted);margin-top:.5rem}
+
+.trend{font-size:.88rem;color:var(--ink-2);margin:1rem 0;line-height:1.6}
+.trend-k{display:inline-block;font-size:.72rem;font-weight:700;color:var(--ink);margin-right:.4rem}
+
+.tips{margin-top:.6rem}
+.tips summary{cursor:pointer;font-family:var(--display);font-size:.92rem;font-weight:700;padding:.3rem 0;list-style:none}
+.tips summary::-webkit-details-marker{display:none}
+.tips summary::before{content:"▸";color:var(--accent);margin-right:.5rem;display:inline-block;transition:transform .2s}
+.tips[open] summary::before{transform:rotate(90deg)}
+.tips ul{list-style:none;margin-top:.5rem}
+.tips li{font-size:.86rem;color:var(--ink-2);padding:.4rem 0 .4rem 1.3rem;position:relative;border-top:1px solid var(--line-2);line-height:1.55}
+.tips li:first-child{border-top:0}
+.tips li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+
+.eu{font-size:.78rem;color:oklch(0.82 0.07 230);background:color-mix(in oklch,oklch(0.6 0.12 230) 12%,transparent);border:1px solid color-mix(in oklch,oklch(0.6 0.12 230) 28%,transparent);border-radius:.6rem;padding:.6rem .8rem;margin-top:.9rem;line-height:1.55}
+.eu-flag{display:block;font-weight:700;margin-bottom:.2rem}
+
+.srcs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line-2)}
+.srcs-k{font-size:.72rem;color:var(--muted);margin-right:.2rem}
+.src{font-size:.76rem;color:var(--ink-2);text-decoration:none;border:1px solid var(--line);border-radius:.4rem;padding:.22rem .55rem;transition:color .2s,border-color .2s}
+.src:hover{color:var(--accent);border-color:var(--accent)}
+
+/* footer */
+.foot{border-top:1px solid var(--line-2);margin-top:2rem;padding:2.4rem 0 3rem;text-align:center;color:var(--muted);font-size:.8rem;line-height:1.8}
+.foot a{color:var(--accent);text-decoration:none}
+.foot .arch-link{display:inline-block;margin-top:1rem;padding:.55rem 1.3rem;border:1px solid var(--accent);border-radius:.6rem;color:var(--accent);text-decoration:none;font-size:.85rem;transition:background .2s,color .2s}
+.foot .arch-link:hover{background:var(--accent);color:var(--on-accent)}
+
+/* recent dates */
+.recent{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center}
+.recent-k{font-size:.74rem;color:var(--muted);font-family:var(--mono)}
+.recent a{font-size:.76rem;color:var(--ink-2);text-decoration:none;font-family:var(--mono);border:1px solid var(--line);border-radius:.4rem;padding:.2rem .5rem;transition:color .2s,border-color .2s}
+.recent a:hover{color:var(--accent);border-color:var(--accent)}
+.recent a.today{color:var(--accent);border-color:var(--accent)}
+
+/* reveal — content visible by default; enhance only when motion allowed */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.16,1,.3,1) var(--delay,0ms) both}
+  .js .reveal-on{animation-play-state:paused}
+  .js .reveal-on.in{animation-play-state:running}
+}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (max-width:720px){
+  .row-head{grid-template-columns:auto 1fr;grid-template-areas:"rank title" "img img"}
+  .row-img{display:none}
+  .kpis{flex-direction:row}
+  .kpi{padding:.7rem .6rem}
+  .kpi b{font-size:1.2rem}
+}
+@media (max-width:520px){
+  .stat{flex:1 1 100%}
+  .hero-top{gap:1rem}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">跳到主内容</a>
 
-<div class="loading-overlay" id="loading"><div class="loading-spinner"></div></div>
-<canvas class="bg-particles" id="particles"></canvas>
+<div class="topbar"><div class="wrap">
+  <span class="brand"><span class="dot"></span>爆款捕手 <small>Boom Catcher</small></span>
+  <a class="arch" href="archive.html">历史捕获 →</a>
+</div></div>
 
-<section class="hero">
-  <div class="hero-date">2026年5月31日 · 周六</div>
-  <div class="hero-box" id="heroBox" onclick="openBox()">
-    <div class="hero-box-inner">
-      <div class="hero-box-front">🎁</div>
-      <div class="hero-box-back">
-        <span style="font-size:2rem;display:block;">🔬</span>
-        <span style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;">今天发现</span>
-        <span style="font-size:1.2rem;font-weight:700;color:var(--accent);">6 个爆款</span>
-      </div>
+<header class="hero"><div class="wrap">
+  <div class="hero-top">
+    <div>
+      <p class="date">2026年5月31日 · 周日</p>
+      <h1>今日异常爆款<span class="sub">每日全球电商趋势情报</span></h1>
+      <p class="theme-line">🧪 今天的爆款都在帮你「修理自己」 <span class="em">— 喝的水要充电、头痛靠冰敷、脸要打光</span></p>
     </div>
-    <div class="hero-box-label" id="boxLabel">👆 点我开盲盒</div>
+    <button class="box" id="box" type="button" aria-pressed="false" aria-label="开盲盒，查看今日发现">
+      <span class="box-inner">
+        <span class="box-face box-front" aria-hidden="true">🎁</span>
+        <span class="box-face box-back">
+          <span class="be" aria-hidden="true">🧪</span>
+          <span class="bn">6 个</span>
+          <span class="bl">今日爆款</span>
+        </span>
+      </span>
+      <span class="box-hint" id="boxHint">点我开盲盒</span>
+    </button>
   </div>
-  <h1 class="hero-title">爆款捕手<br><span style="font-size:0.6em;font-weight:400;">Boom Catcher</span></h1>
-  <p class="hero-theme">🔬 今天的爆款都在重写「物理规律」— 不该存在的价格、不该火的品类、不该在这里卖的东西，全在同一天爆了</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-value">200</div><div class="hero-stat-label">扫描商品</div></div>
-    <div class="hero-stat"><div class="hero-stat-value">6</div><div class="hero-stat-label">异常爆款</div></div>
-    <div class="hero-stat"><div class="hero-stat-value">13</div><div class="hero-stat-label">覆盖平台</div></div>
+  <div class="kpis reveal reveal-on" aria-label="今日数据概览">
+    <div class="kpi"><b>200</b><span>扫描商品</span></div>
+    <div class="kpi"><b>6</b><span>异常爆款</span></div>
+    <div class="kpi"><b>13</b><span>覆盖平台</span></div>
   </div>
-  <div style="margin-top:2rem;animation:bounce 2s infinite;"><span style="font-size:1.5rem;color:var(--text-muted);">↓</span></div>
-</section>
+</div></header>
 
-<nav class="date-nav reveal-section" id="dateNav">
-  <span style="color:var(--text-muted);font-size:0.8rem;">📅 最近捕获：</span>
-  <div id="dateNavLinks" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></div>
-</nav>
+<nav class="tabs" aria-label="区域切换"><div class="wrap" role="tablist">
+  <button class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true" tabindex="0">🇺🇸 美国区</button>
+  <button class="tab" role="tab" id="tab-eu" aria-controls="panel-eu" aria-selected="false" tabindex="-1">🇪🇺 欧洲区</button>
+  <button class="tab" role="tab" id="tab-global" aria-controls="panel-global" aria-selected="false" tabindex="-1">🌍 全域爆款</button>
+</div></nav>
 
-<div class="tab-nav reveal-section" id="tabNav">
-  <button class="tab-btn active" onclick="switchTab('us')" id="tabUs">🇺🇸 美国区</button>
-  <button class="tab-btn" onclick="switchTab('eu')" id="tabEu">🇪🇺 欧洲区</button>
-  <button class="tab-btn tab-global" onclick="switchTab('global')" id="tabGlobal">🌍 全域爆款</button>
-</div>
+<main id="main" class="wrap">
+  <section class="panel" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
+    <article class="row reveal reveal-on row-hero" style="--delay:0ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">💧</span><span class="rank-tag">#1 US · 全域</span></div>
+          <div class="row-title">
+            <h3>氢水杯 / Hydrogen Water Bottle</h3>
+            <p class="cat">生物黑客 · 健康电器</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=hydrogen+water+bottle+generator+portable" target="_blank" rel="noopener" aria-label="搜索 氢水杯 / Hydrogen Water Bottle 的产品图片"><span aria-hidden="true">💧</span></a>
+        </header>
 
-<section class="products-section tab-panel active" id="panelUs">
-  <h2 class="section-title">🇺🇸 美国区 · 异常爆款</h2>
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">86<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">55-70% 毛利率</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">中（电解片/认证）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">温和（有空间）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">$45 – $150</span></div>
+        </div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#1 US · 全域</div>
-    <a href="https://www.google.com/search?tbm=isch&q=mystery+squishy+dumpling+blind+box+steamer+basket+sensory+toy+glitter" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🥟</a>
-    <div class="product-header">
-      <div><h3 class="product-name">神秘饺子捏捏玩具 / Mystery Squishy Dumpling Blind Box</h3><span class="product-category">玩具 · 解压/感官</span></div>
-    </div>
-    <div class="product-price">$5 – $12</div>
-    <div class="platform-badges">
-      <span class="platform-badge">📱 TikTok 500M+播放</span>
-      <span class="platform-badge">🛒 Amazon Movers上升</span>
-      <span class="platform-badge">🏪 Five Below秒售罄</span>
-      <span class="platform-badge">♻️ 盲盒机制驱动复购</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：一个$5的食物形捏捏玩具，在没有大牌IP背书、没有节日节点的普通春末，于五天内在TikTok累积超5亿次播放。稀有版本（极光款/鲨鱼款）在线下门店开门1小时内售罄，StockX二手溢价达6-8倍。品牌RMS USA同步发行「黄金盲盒」全国限量一个，制造出彩票级FOMO效应——这在玩具品类极为罕见。英国社区正同步引爆，EU套利窗口刚刚开启。
-      <span class="anomaly-score">异常指数：96/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">核心购买动机是感官满足（ASMR挤压声+慢回弹视觉）、收集癖驱动的盲盒赌博心理、以及将其作为成人解压神器而非儿童玩具使用。负面声音集中于正版断货后山寨品泛滥、面部印刷易脱落等质量问题。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">感官 & ASMR解压</span>
-        <span class="voc-theme-tag">盲盒收集与稀有度追逐</span>
-        <span class="voc-theme-tag">成人化「玩具」去污名化</span>
-      </div>
-      <div class="voc-quote">"I can already tell these are about to become one of those viral TikTok sensory toy crazes where everybody suddenly needs a squishy dumpling on their desk, emotionally supporting them through adulthood." <span class="voc-quote-source">— TikTok @trending detail</span></div>
-      <div class="voc-quote">"The viral mystery squishy dumplings have officially landed in the UK and honestly… I get the hype now. They're soft, squishy, ridiculously satisfying and every single one is a mystery reveal." <span class="voc-quote-source">— TikTok UK Creator</span></div>
-      <div class="voc-quote">"TikTok made me buy it and I'm NOT disappointed! This instantly calms my anxiety!" <span class="voc-quote-source">— squishydumpling.store 买家评价</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:82%"></div>
-        <div class="sentiment-neutral" style="width:11%"></div>
-        <div class="sentiment-negative" style="width:7%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 82% · 😐 11% · 😟 7% · 来源：TikTok, StockX, Amazon评价, Five Below, squeezy.store</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">65-78% 毛利率（私标版 $1.2-$2 成本，$9-$15出售）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">低门槛（TPR泡棉工厂现货，义乌/东莞均有MOQ=500起步供应商）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和偏热（正版被RMS USA占据，但白牌空间充足）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">短期爆炸性增长正在持续（英国已自发引爆），盲盒机制 + 不断推出稀有版本可延长生命周期至12个月以上；需警惕6个月后品类饱和。</span>
-    </div>
-    <ul class="tips-list">
-      <li>立即切入UK/DE/FR市场白牌版本，定价€6.99-€9.99，速度就是壁垒；正版在EU尚无大规模铺货</li>
-      <li>不要卖单品，做「全系列收集礼盒」（7色套装+蒸笼展示架），客单价提升3倍，适合Etsy和TikTok Shop</li>
-      <li>投放策略：向中小创作者（1万-10万粉）寄测品，ASMR挤压开箱内容转化率显著高于普通展示视频</li>
-    </ul>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.amazon.com/s?k=mystery+squishy+dumpling+blind+box" target="_blank">🛒 Amazon</a>
-      <a class="source-link" href="https://www.tiktok.com/search?q=dumpling+squishy" target="_blank">📱 TikTok</a>
-      <a class="source-link" href="https://www.fivebelow.com/products/squish/squishy-bun" target="_blank">🏪 Five Below</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=mystery+squishy+dumpling+blind+box+steamer+basket+sensory+toy+glitter" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
+        <div class="tags"><span class="tag">📱 TikTok #biohacking 爆火</span><span class="tag">🛒 Amazon 健康榜上升</span><span class="tag">🌐 独立站 DTC 热卖</span></div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#2 US · 全域</div>
-    <a href="https://www.google.com/search?tbm=isch&q=mouth+tape+sleep+nasal+breathing+strip+hypoallergenic+wellness" target="_blank" class="product-image-wrap" title="点击搜索产品图片">📼</a>
-    <div class="product-header">
-      <div><h3 class="product-name">睡眠封口贴 / Mouth Tape for Sleep (Sleepmaxxing)</h3><span class="product-category">健康 · 睡眠优化</span></div>
-    </div>
-    <div class="product-price">$7 – $22</div>
-    <div class="platform-badges">
-      <span class="platform-badge">📱 TikTok Sleepmaxxing数十亿播放</span>
-      <span class="platform-badge">🛒 Amazon Health上升榜</span>
-      <span class="platform-badge">💬 Reddit 数十万活跃用户</span>
-      <span class="platform-badge">🧪 无大牌背书</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：一条售价$7-12的医用胶布状产品，因「Sleepmaxxing」趋势在TikTok爆发，到2026年初相关内容已累积数十亿次播放，催生整个品类的专属品牌集群。Amazon上竞争SKU已达146个，但头部3个ASIN仍拿走54%的转化份额——说明强力私标仍有显著空间。该品类无任何节日驱动，完全由内容算法支撑，属于典型的非节日刚需异常值。
-      <span class="anomaly-score">异常指数：89/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">用户报告改善鼾声、早晨干口减少和睡眠深度提升，大量Reddit用户反馈坚持使用10天后有显著体感改变。负面声音来自正统医疗界对睡眠呼吸暂停患者风险的警告，以及粘性不足/脱落的产品质量抱怨。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">鼻呼吸的科学背书需求</span>
-        <span class="voc-theme-tag">Sleepmaxxing习惯栈（叠加产品购买）</span>
-        <span class="voc-theme-tag">医学与消费品边界的焦虑</span>
-      </div>
-      <div class="voc-quote">"The mouth-taping Reddit communities have hundreds of thousands of active members sharing consistent reports of better sleep, less snoring, and morning energy improvements." <span class="voc-quote-source">— GiftedPicks.com, April 2026</span></div>
-      <div class="voc-quote">"Sleepmaxxing is the biggest sleep trend of 2026... By early 2026, 'sleepmaxxing' content was racking up billions of views." <span class="voc-quote-source">— SleepyDeepy, May 2026</span></div>
-      <div class="voc-quote">"Mouth taping went viral, then went viral again as a backlash, then settled into a more grown-up middle ground." <span class="voc-quote-source">— SleepyDeepy Blog</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:65%"></div>
-        <div class="sentiment-neutral" style="width:20%"></div>
-        <div class="sentiment-negative" style="width:15%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 65% · 😐 20% · 😟 15% · 来源：Reddit r/sleepmaxxing, Amazon评价, GiftedPicks, SleepyDeepy, TikTok</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">72-80% 毛利率（成本$0.8-$1.5/片，30片盒装售$12-$20）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">极低门槛（医用无纺布/竹纤维材料，深圳/广州现货充足，最低起订500盒）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和（146个竞品SKU但前三名集中度高，差异化空间大）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">Sleepmaxxing是2026最大健康宏观趋势之一，预计至少持续18个月；需关注FDA监管风险（医疗器械声索）。</span>
-    </div>
-    <ul class="tips-list">
-      <li>配方差异化是破局关键：加薰衣草香气版、竹纤维材质版，打「天然 + 皮肤友好」标签，与普通胶布拉开距离</li>
-      <li>捆绑销售是核心：将口贴与镁元素贴片、眼罩、耳塞打包成「Sleepmaxxing Starter Kit」，客单价从$12提至$39-$49</li>
-      <li>EU市场定价比美国高15-25%，且本土竞争者更少；德国和北欧的「睡眠健康」文化接受度高，率先切入</li>
-    </ul>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.amazon.com/s?k=mouth+tape+for+sleep" target="_blank">🛒 Amazon</a>
-      <a class="source-link" href="https://www.tiktok.com/search?q=mouth+tape+sleep+sleepmaxxing" target="_blank">📱 TikTok</a>
-      <a class="source-link" href="https://www.reddit.com/r/sleepmaxxing" target="_blank">💬 Reddit</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=mouth+tape+sleep+nasal+breathing+strip+hypoallergenic+wellness" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>一个「会给水充电」的杯子卖到 $150，本质是把白开水变成身份消费。无大牌背书，靠 TikTok biohacking 内容自传播；科学争议越大、传播越猛——质疑和信仰两派对撕本身就是流量燃料。</p>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#3 US</div>
-    <a href="https://www.google.com/search?tbm=isch&q=portable+thermal+inkless+mini+printer+bluetooth+sticker+label+photo" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🖨️</a>
-    <div class="product-header">
-      <div><h3 class="product-name">便携热敏打印机 / Portable Thermal Inkless Mini Printer</h3><span class="product-category">文具科技 · 创意工具</span></div>
-    </div>
-    <div class="product-price">$18 – $65</div>
-    <div class="platform-badges">
-      <span class="platform-badge">📱 TikTok Shop高转化</span>
-      <span class="platform-badge">🛒 Amazon上升榜</span>
-      <span class="platform-badge">🎨 跨圈层爆发（学生/小商户/手账族）</span>
-      <span class="platform-badge">♻️ 零耗材黑科技</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：打印机是高度成熟的耐用品品类，正常情况下不应出现病毒式传播。但「零墨水+蓝牙+掌心大小」的组合重新定义了产品边界——它在TikTok上同时击中了学生手账族、小商户打标签、数字游民打印文件三个完全不相关的受众，且价格锚点（$25-$45）远低于传统打印机，触发大量冲动购买。CJdropshipping数据显示热敏打印机月销量已超22万件。
-      <span class="anomaly-score">异常指数：82/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">用户高度称赞其「随时随地打印，无需换墨盒」的便利性，创意用途（DIY贴纸、打包贴标、旅行照片）在内容上比功能性用途表现更强。主要抱怨是热敏纸专用耗材需持续购买（耗材陷阱），以及打印分辨率在精细图案上的不足。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">无耗材科技的「解放感」</span>
-        <span class="voc-theme-tag">创意内容生产工具化</span>
-        <span class="voc-theme-tag">小商户/Etsy卖家降本增效</span>
-      </div>
-      <div class="voc-quote">"Compact thermal printers are gaining traction among students, journaling fans, and small business owners. Viral TikTok content shows these printers in action—producing stickers, labels, and checklists." <span class="voc-quote-source">— CJdropshipping AliExpress Trending 2026</span></div>
-      <div class="voc-quote">"This viral portable thermal printer is totally worth the hype! #TikTokMadeMeBuyIt #digitalnomad #workfromhome" <span class="voc-quote-source">— TikTok @buildbasic</span></div>
-      <div class="voc-quote">"Inkless? Wireless? Portable Printer? Yes, everyone can print anything anywhere!" <span class="voc-quote-source">— TikTok Shop 热门视频</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:72%"></div>
-        <div class="sentiment-neutral" style="width:18%"></div>
-        <div class="sentiment-negative" style="width:10%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 72% · 😐 18% · 😟 10% · 来源：TikTok Shop, Amazon, CJdropshipping, AliExpress数据</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">55-68% 毛利率（AliExpress拿货$8-$15，零售$35-$65）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">中等（汉印/Phomemo/精臣等品牌占主导，OEM/ODM定制需3-4周交期）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">中等（Phomemo、HPRT等有认知度，但白标+差异包装仍有空间）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">远程工作 + 手账文化 + 小商户增长三条趋势共同支撑，预计稳定增长至少24个月；耗材复购是真正的长期价值。</span>
-    </div>
-    <ul class="tips-list">
-      <li>主打「耗材订阅」模式：机器低价或免费，绑定3/6个月热敏纸自动补货，LTV提升4-5倍</li>
-      <li>定向小商户和Etsy卖家群体，强调「两色热敏（红黑）打印机」差异点，目前市场上稀缺，TikTok上已有自发讨论</li>
-      <li>与AI生成贴纸APP合作捆绑销售，形成内容-硬件闭环，降低获客成本</li>
-    </ul>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.amazon.com/s?k=portable+thermal+inkless+mini+printer" target="_blank">🛒 Amazon</a>
-      <a class="source-link" href="https://www.tiktok.com/search?q=portable+thermal+printer" target="_blank">📱 TikTok Shop</a>
-      <a class="source-link" href="https://www.aliexpress.com/w/wholesale-mini-thermal-printer.html" target="_blank">🛒 AliExpress</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=portable+thermal+inkless+mini+printer+bluetooth+sticker+label+photo" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
-</section>
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">消费者高度两极：怀疑派认为氢浓度太低、溶解氢很快逸散，溢价是「智商税+安慰剂」；信仰派主观报告精力变好、运动恢复更快。买的人要的不是临床证据，是「我在认真投资自己」的仪式感。</p>
+          <div class="themes"><span class="theme">生物黑客</span><span class="theme">健康焦虑</span><span class="theme">安慰剂争议</span><span class="theme">DTC 叙事</span><span class="theme">仪式感消费</span></div>
+          <blockquote class="quote">Dissolved hydrogen escapes so fast it's basically placebo with a USB port.<cite>— Reddit r/Biohackers</cite></blockquote><blockquote class="quote">Can't prove it scientifically but my morning energy is genuinely better after 3 weeks.<cite>— Reddit r/Supplements</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 45%、中性 30%、负面 25%">
+            <span class="senti-bar"><i class="s-pos" style="width:45%"></i><i class="s-neu" style="width:30%"></i><i class="s-neg" style="width:25%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">45%</b> 正面 · 30% 中性 · <b class="s-neg-t">25%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：Reddit r/Biohackers, r/Supplements, TikTok 评论</p>
+        </div>
 
-<section class="products-section tab-panel" id="panelEu" style="display:none;">
-  <h2 class="section-title">🇪🇺 欧洲区 · 异常爆款</h2>
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性中——绑定 biohacking 长期思潮，但功效争议封顶主流化；监管（健康宣称）是最大风险。最佳窗口 6-12 个月。</div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#1 EU · 全域</div>
-    <a href="https://www.google.com/search?tbm=isch&q=HOVERAir+X1+foldable+self-flying+pocket+drone+follow+me+camera+outdoor" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🚁</a>
-    <div class="product-header">
-      <div><h3 class="product-name">掌上自飞摄像无人机 / HOVERAir X1 Self-Flying Pocket Drone</h3><span class="product-category">消费电子 · 创作工具</span></div>
-    </div>
-    <div class="product-price">€299 – €599</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🇪🇺 EU 50+国同步上市</span>
-      <span class="platform-badge">🎖️ Red Dot Award 2026</span>
-      <span class="platform-badge">🛒 Amazon Electronics上升</span>
-      <span class="platform-badge">📱 TikTok创作者神器</span>
-      <span class="platform-badge">⚡ AQUA新品发布催化</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：无人机是需要驾照、注册、专业知识的高门槛品类——HoverAir X1打破了所有规则：125g以下无需FAA/EASA注册，掌心起飞无需遥控器，5条预设飞行路径零学习成本。2026年5月28日AQUA新品在50+国同步上市，且美国市场因FCC禁令对中国无人机实施封锁，美国买家流量大规模涌入EU渠道形成套利机会。Red Dot奖项背书进一步推动EU高净值消费者决策。
-      <span class="anomaly-score">异常指数：91/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">欧洲用户最大的购买动机是「独自旅行时的自拍神器」和「无需操控的户外运动跟拍」，德语评测普遍给出高分并称赞产品确实做到了宣传效果。主要抱怨是单块电池仅10分钟续航和风速敏感性。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">独行旅行者的「自动摄影师」</span>
-        <span class="voc-theme-tag">无需技能的影像创作民主化</span>
-        <span class="voc-theme-tag">FCC禁令造成的供需错配套利</span>
-      </div>
-      <div class="voc-quote">"Hover Air X1 has effectively created a new drone category – and stamped a lot of authority on it too." <span class="voc-quote-source">— HOVERAir官网媒体评价汇总</span></div>
-      <div class="voc-quote">"Top Top Top, kein, leicht, handlich, APP leicht verständlich... Absolut zum empfehlen für den Einstieg für Wandern, Sport, Radfahren." <span class="voc-quote-source">— EU官网 德语买家评价</span></div>
-      <div class="voc-quote">"I've flown a lot of drones in my day, and I've rarely been as impressed as I am with the HoverAir X1. It's incredibly simple to get-going, safe and, best of all, it's a whole lot of fun." <span class="voc-quote-source">— HOVERAir官网媒体评语</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:78%"></div>
-        <div class="sentiment-neutral" style="width:16%"></div>
-        <div class="sentiment-negative" style="width:6%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 78% · 😐 16% · 😟 6% · 来源：EU官网评价, Amazon.de, DroneXL.co, TikTok, Red Dot官网</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">25-38% 毛利率（品牌授权品，套利空间在配件生态）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">中高（Zero Zero Robotics官方供货，配件（保护壳/多电池套装）有第三方机会）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">中等（DJI Neo 2是主要对手，但HoverAir在无需遥控+超轻量细分中暂无对手）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">美国FCC禁令短期内不会解除，欧洲市场窗口期至少持续12个月；AQUA新品将持续推热整个产品线。</span>
-    </div>
-    <ul class="tips-list">
-      <li>进入配件生态：HoverAir专属保护壳、多电池充电hub、运动背包挂件——这是零管控的高利润白标空间</li>
-      <li>定向Outdoor/Hiking/Cycling类TikTok和Instagram创作者做分销，创作者自己就是最好的演示视频</li>
-      <li>美国买家因FCC禁令无法购买新款，提供EU→US转运服务（需研究合规路径）或开发非中国产竞品配件</li>
-    </ul>
-    <div class="eu-compliance">EU用户无需EASA注册（<250g豁免），但需确认Open Category A1/A3飞行规则；AQUA版需核查各国电磁兼容认证（CE Mark已在EU官网标注）。FCC禁令仅限美国，EU市场合规风险低。</div>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.amazon.de/s?k=HOVERAir+X1+drone" target="_blank">🛒 Amazon EU</a>
-      <a class="source-link" href="https://eu.hoverair.com" target="_blank">🌐 EU官网</a>
-      <a class="source-link" href="https://www.tiktok.com/search?q=hoverair+drone" target="_blank">📱 TikTok</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=HOVERAir+X1+foldable+self-flying+pocket+drone+follow+me+camera+outdoor" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>千万别宣称医疗功效，主打「仪式感 + 便携充电」体验，规避监管红线</li><li>做内容电商：before/after 精力 vlog + 网红开箱是核心获客</li><li>差异化拼颜值与续航，别拼虚无的 ppb 数字</li></ul>
+        </details>
+        
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.amazon.com/s?k=hydrogen+water+bottle+generator" target="_blank" rel="noopener">🛒 Amazon</a><a class="src" href="https://www.tiktok.com/search?q=hydrogen+water+bottle" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=hydrogen+water+bottle+generator+portable" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:60ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">🧊</span><span class="rank-tag">#2 US</span></div>
+          <div class="row-title">
+            <h3>偏头痛冰敷头套 / Migraine Ice Head Wrap</h3>
+            <p class="cat">健康护理 · 功能家居</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=migraine+ice+head+wrap+cap+cold+therapy" target="_blank" rel="noopener" aria-label="搜索 偏头痛冰敷头套 / Migraine Ice Head Wrap 的产品图片"><span aria-hidden="true">🧊</span></a>
+        </header>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#2 EU</div>
-    <a href="https://www.google.com/search?tbm=isch&q=wall+mounted+wooden+hat+organizer+rack+minimal+Scandinavian+home+decor" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🪵</a>
-    <div class="product-header">
-      <div><h3 class="product-name">壁挂木制帽架 / Wall-Mounted Wooden Hat Organizer</h3><span class="product-category">家居收纳 · 北欧美学</span></div>
-    </div>
-    <div class="product-price">€18 – €55</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🛒 Etsy EU热搜上升</span>
-      <span class="platform-badge">🏠 CleanTok引流</span>
-      <span class="platform-badge">🌿 可持续材质溢价</span>
-      <span class="platform-badge">📐 极简美学共鸣</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：帽架是极度成熟、毫无爆点的家居单品，但在2026年Etsy EU搜索中意外攀升——触发因子是「Nanna Chic」和「Modern Nostalgia」双重美学趋势叠加。消费者正在用实木帽架替代快时尚的塑料衣物挂件，同时在TikTok「前后对比」内容中频繁出现，使其兼具审美价值和社媒传播力。AliExpress拿货成本$3-$8，Etsy售价€35-€55，套利空间显著。
-      <span class="anomaly-score">异常指数：78/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">欧洲买家强调「天然实木材质」和「极简斯堪的纳维亚美学」是核心购买理由，大量买家将其视为对抗快消品的有意识消费选择。抱怨集中于安装复杂（需打孔）和部分产品照片与实物色差过大。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">Nanna Chic美学：温暖木质感回归</span>
-        <span class="voc-theme-tag">有意识消费 vs 快时尚替代品</span>
-        <span class="voc-theme-tag">TikTok前后对比内容驱动的场景化购买</span>
-      </div>
-      <div class="voc-quote">"Wood is back in a big way. Wood paneling, sophisticated fluted details, stained oak accents, and heritage-inspired touches are showing up in modern homes." <span class="voc-quote-source">— eRank Etsy Trends 2026</span></div>
-      <div class="voc-quote">"Instead of chasing quick trends and an ultra-minimalist aesthetic, buyers are leaning towards warmth, texture, nostalgia, and meaningful handmade products." <span class="voc-quote-source">— eRank Help Blog, January 2026</span></div>
-      <div class="voc-quote">"The HatNest Wooden Organizer is a wall-mounted hat rack with a minimal aesthetic that fits seamlessly into modern home decor content." <span class="voc-quote-source">— Sell The Trend AliExpress 2026报告</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:74%"></div>
-        <div class="sentiment-neutral" style="width:19%"></div>
-        <div class="sentiment-negative" style="width:7%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 74% · 😐 19% · 😟 7% · 来源：Etsy EU, eRank数据, Sell The Trend, AliExpress买家评价</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-watch">⭐ 关注</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">62-75% 毛利率（AliExpress拿货€4-€10，Etsy/DM均价€35-€55）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">低门槛（榉木/橡木款在义乌和广东均有大量现货供应商，MOQ=50件）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">温和（Etsy上存量卖家以手工小作坊为主，无强势品牌垄断）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">「Nanna Chic」美学趋势是18-24个月级别的宏观周期，但帽架本身属于长尾产品，需配合强内容输出维持热度。</span>
-    </div>
-    <ul class="tips-list">
-      <li>Etsy上附加「个性化烫刻名字/首字母」服务，溢价€8-€15，转化率可提升20-30%</li>
-      <li>拍摄「凌乱帽子柜→整洁木架」前后对比视频，投放德国和荷兰的家居类博主，CPM极低但转化精准</li>
-      <li>捆绑「全套玄关收纳套装」（帽架+钥匙挂钩+雨伞架），客单价从€45提升至€89-€120</li>
-    </ul>
-    <div class="eu-compliance">天然实木产品需符合EU REACH法规（确认无有害化学处理）；出口至德国需LFGB检测报告（接触食物面风险低，但正规出口需备案）；CE标志不适用，但建议提供材质安全声明。</div>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.etsy.com/search?q=wooden+hat+organizer+wall+mounted" target="_blank">🛒 Etsy</a>
-      <a class="source-link" href="https://www.amazon.de/s?k=holz+huthalter+wandmontage" target="_blank">🛒 Amazon DE</a>
-      <a class="source-link" href="https://www.aliexpress.com/w/wholesale-wooden-hat-rack-wall.html" target="_blank">🛒 AliExpress</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=wall+mounted+wooden+hat+organizer+rack+minimal+Scandinavian+home+decor" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">79<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-must">🔥 必跟</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">60-72% 毛利率</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">低（现货充足）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">温和（有空间）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">$20 – $40</span></div>
+        </div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">#3 EU</div>
-    <a href="https://www.google.com/search?tbm=isch&q=posture+corrector+strap+back+brace+ergonomic+remote+worker+wellness+wearable" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🎽</a>
-    <div class="product-header">
-      <div><h3 class="product-name">磁力姿势矫正带 / AlignFlex Posture Correction Strap</h3><span class="product-category">健康 · 人体工学</span></div>
-    </div>
-    <div class="product-price">€15 – €45</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🛒 AliExpress EU爆量</span>
-      <span class="platform-badge">💼 远程办公刚需</span>
-      <span class="platform-badge">📱 Instagram Reels驱动</span>
-      <span class="platform-badge">🩺 人体工学热潮</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 为什么是异常值：姿势矫正器是多年来的传统热销品，为何今天仍是异常值？原因在于：远程办公人群在2026年大规模反弹——大量企业强制RTO（Return to Office）政策失败后，居家办公成为永久形态，颈肩问题搜索量再度突破新高。AliExpress上AlignFlex Posture Strap被Sell The Trend的Nexus AI识别为当前欧洲区「高速上升」信号，无任何大品牌主导，且定价区间（€15-€45）处于EU最敏感的冲动购买区间。
-      <span class="anomaly-score">异常指数：77/100</span>
-    </div>
-    <div class="voc-section">
-      <h4>🗣️ 消费者在说什么</h4>
-      <p style="margin-bottom:0.5rem;">用户将其描述为「久坐职场人的救命稻草」，强调穿戴后即时的姿势反馈感。负面评价集中于长期穿戴后皮肤不适、尺码偏差和对「肌肉依赖性」的担忧。女性用户占比明显高于男性，强调隐形穿着的重要性。</p>
-      <div class="voc-themes">
-        <span class="voc-theme-tag">远程办公颈肩痛的系统解决方案需求</span>
-        <span class="voc-theme-tag">「不依赖药物」的主动健康管理</span>
-        <span class="voc-theme-tag">隐形穿戴 + 日常场景融合</span>
-      </div>
-      <div class="voc-quote">"AlignFlex Posture Straps target the massive market of remote workers and desk-bound professionals. Resistance bands and posture support gear have shown strong demand on AliExpress, driven by social media trends around ergonomic health." <span class="voc-quote-source">— Sell The Trend AliExpress 2026</span></div>
-      <div class="voc-quote">"Fitness and wellness products are trending in 2026, with buyers shifting toward smaller, practical items rather than bulky equipment." <span class="voc-quote-source">— Sell The Trend Blog, March 2026</span></div>
-      <div class="voc-quote">"These products hook viewers by highlighting a common frustration and delivering a clever solution." <span class="voc-quote-source">— Dark Room Agency TikTok Products 2026</span></div>
-      <div class="sentiment-bar">
-        <div class="sentiment-positive" style="width:66%"></div>
-        <div class="sentiment-neutral" style="width:22%"></div>
-        <div class="sentiment-negative" style="width:12%"></div>
-      </div>
-      <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">😊 66% · 😐 22% · 😟 12% · 来源：AliExpress, Sell The Trend, Amazon.de评价, TikTok Health</div>
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-watch">⭐ 关注</div></div>
-      <div class="biz-card"><div class="biz-card-label">利润潜力</div><div class="biz-card-value">58-70% 毛利率（AliExpress成本€2-€6，零售€18-€45）</div></div>
-      <div class="biz-card"><div class="biz-card-label">供应链门槛</div><div class="biz-card-value">低门槛（弹力带+背部支架结构简单，MOQ=100件起，深圳/义乌现货充足）</div></div>
-      <div class="biz-card"><div class="biz-card-label">竞争密度</div><div class="biz-card-value">中等（传统医疗器械品牌如Bauerfeind占高端，中低端白标空间大）</div></div>
-    </div>
-    <div style="margin-top:0.75rem;">
-      <strong style="font-size:0.85rem;">📈 趋势判断：</strong>
-      <span style="font-size:0.85rem;color:var(--text-secondary);">远程办公人群作为结构性增量，预计保持稳定需求至2028年；但品类已进入成熟期，需要差异化定位才能突围。</span>
-    </div>
-    <ul class="tips-list">
-      <li>切入「女性办公族」细分市场，推出裸肤色/黑色隐形款，配合「穿西装也能穿」的内容角度，与医疗感品牌拉开距离</li>
-      <li>开发「30天姿势挑战」内容营销方案，配合产品销售——挑战类内容在EU的Instagram/Reels传播成本极低</li>
-      <li>联合人体工学椅/颈椎枕品牌做交叉促销包，构建「居家办公健康套装」，获客成本均摊，客单价提升至€79+</li>
-    </ul>
-    <div class="eu-compliance">作为I类医疗器械（非植入式），需满足EU MDR 2017/745基本要求；若宣称「医疗效果」需CE认证；建议仅宣传「姿势改善」而非「治疗疾病」，可规避强监管；需REACH化学品合规（弹性材料）。</div>
-    <div class="source-links">
-      <span class="source-links-label">🔗 探索来源：</span>
-      <a class="source-link" href="https://www.aliexpress.com/w/wholesale-posture-corrector-strap.html" target="_blank">🛒 AliExpress</a>
-      <a class="source-link" href="https://www.amazon.de/s?k=haltungskorrektur+r%C3%BCcken" target="_blank">🛒 Amazon DE</a>
-      <a class="source-link" href="https://www.tiktok.com/search?q=posture+corrector+work+from+home" target="_blank">📱 TikTok</a>
-      <a class="source-link" href="https://www.google.com/search?tbm=isch&q=posture+corrector+strap+back+brace+ergonomic+remote+worker+wellness+wearable" target="_blank">🖼️ 图片搜索</a>
-    </div>
-  </article>
-</section>
+        <div class="tags"><span class="tag">📱 TikTok 病毒演示</span><span class="tag">🛒 Amazon 健康榜</span><span class="tag">🎯 刚需复购品</span></div>
 
-<section class="products-section tab-panel" id="panelGlobal" style="display:none;">
-  <h2 class="section-title">🌍 全域爆款 <span style="font-size:0.7em;color:var(--text-muted);">— 在两个区域同时爆发</span></h2>
-  <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:0.9rem;">以下产品在美国区和欧洲区同时出现异常增长信号，具有最强的跨境套利潜力。</p>
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>医疗辅具跨界成生活方式单品——360° 全包+遮光设计戳中千万偏头痛/经期人群。低成本（凝胶+面料）却有刚需复购属性，TikTok「戴上瞬间缓解」的演示极易转化。</p>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">🌍 全域 #1</div>
-    <a href="https://www.google.com/search?tbm=isch&q=mystery+squishy+dumpling+blind+box+steamer+basket+glitter+variants+collectible+viral" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🥟</a>
-    <div class="product-header">
-      <div><h3 class="product-name">神秘饺子捏捏玩具 / Mystery Squishy Dumpling Blind Box</h3><span class="product-category">全域爆款 · 玩具·解压</span></div>
-    </div>
-    <div class="product-price">US: $5-$12 · EU: €6-€15</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🇺🇸 500M+ TikTok播放 · 五天内Five Below秒售罄</span>
-      <span class="platform-badge">🇪🇺 英国自发引爆 · EU本土竞品几乎为零</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 全域信号：全球同步引爆信号极强：美国市场由盲盒稀有机制驱动二级市场溢价6-8倍，英国创作者在5月底自发发帖称「我可能是UK第一批拿到的人」。EU市场目前无任何本土品牌跟进，供需错位创造了至少4-6个月的套利窗口。TPR材料成本全球统一，EU定价溢价空间比美国高40-60%。
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">套利空间</div><div class="biz-card-value">US→EU 溢价 40-60%（欧洲无本土竞品）</div></div>
-      <div class="biz-card"><div class="biz-card-label">进入难度</div><div class="biz-card-value">低（MOQ 500件，无品牌壁垒）</div></div>
-      <div class="biz-card"><div class="biz-card-label">窗口期</div><div class="biz-card-value">4-8 个月（盲盒机制延长生命周期）</div></div>
-    </div>
-    <ul class="tips-list">
-      <li>以「Asian Kawaii Sensory Toy」定位切入UK/DE/NL，规避与美国玩具巨头的直接竞争</li>
-      <li>在Etsy和TikTok Shop UK同步铺货，前者利润高，后者流量大，双线并进</li>
-      <li>设计EU专属限定款（欧盟旗帜配色/当地文化IP），制造本地化稀缺感，定价€9.99-€14.99</li>
-    </ul>
-  </article>
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">用户普遍认可冷疗真能止痛，最看重「全黑遮光 + 持久冰感 + 可调压」。高频抱怨是：保冷只撑 20-30 分钟、太紧反而加重头痛、魔术贴用久松脱。痛点清晰=改良空间清晰。</p>
+          <div class="themes"><span class="theme">冷疗止痛</span><span class="theme">遮光刚需</span><span class="theme">保冷时长</span><span class="theme">压力可调</span><span class="theme">经期通用</span></div>
+          <blockquote class="quote">The 360 coverage with full darkness is the only thing that gets me through an attack.<cite>— Reddit r/migraine</cite></blockquote><blockquote class="quote">Mine stops being cold after 25 minutes and the velcro is already wearing out.<cite>— Reddit r/migraine</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 70%、中性 18%、负面 12%">
+            <span class="senti-bar"><i class="s-pos" style="width:70%"></i><i class="s-neu" style="width:18%"></i><i class="s-neg" style="width:12%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">70%</b> 正面 · 18% 中性 · <b class="s-neg-t">12%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：Reddit r/migraine, Amazon 评价, TikTok 演示</p>
+        </div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">🌍 全域 #2</div>
-    <a href="https://www.google.com/search?tbm=isch&q=mouth+tape+sleep+nasal+breathing+strip+hypoallergenic+bamboo+wellness+sleepmaxxing+kit" target="_blank" class="product-image-wrap" title="点击搜索产品图片">📼</a>
-    <div class="product-header">
-      <div><h3 class="product-name">睡眠封口贴 / Mouth Tape for Sleepmaxxing</h3><span class="product-category">全域爆款 · 健康·睡眠</span></div>
-    </div>
-    <div class="product-price">US: $7-$22 · EU: €9-€28</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🇺🇸 Amazon Health Top Mover · Reddit 数十万活跃成员</span>
-      <span class="platform-badge">🇪🇺 德国/北欧睡眠健康文化高接受度 · 本土品牌稀缺</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 全域信号：Sleepmaxxing趋势在英语圈先爆，现正渗透欧洲——德国「schlafmaxxing」搜索量在2026年5月出现首次显著增长，EU本土专业睡眠口贴品牌数量不足3个。美国市场已有146个SKU厮杀，但EU市场仍是蓝海，且欧洲消费者对「医学背书+天然材质」的溢价接受度比美国高20-30%。
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">套利空间</div><div class="biz-card-value">EU溢价 20-35%（德语/北欧市场尤为显著）</div></div>
-      <div class="biz-card"><div class="biz-card-label">进入难度</div><div class="biz-card-value">中（需本地化合规声明，避免医疗器械声索）</div></div>
-      <div class="biz-card"><div class="biz-card-label">窗口期</div><div class="biz-card-value">12-18 个月（Sleepmaxxing宏观趋势支撑）</div></div>
-    </div>
-    <ul class="tips-list">
-      <li>EU版本主打「Bamboo Silk + Dermatologist Tested」标签，配合德语/法语内容，溢价比英语版高25%</li>
-      <li>与欧洲睡眠健康播客和YouTube频道（粉丝10万-50万）合作，CPC比主流平台低60%</li>
-      <li>开发「Sleepmaxxing 30-Night Challenge Kit」——口贴+镁补充品+眼罩三合一，欧洲药店渠道（DM/Rossmann）有机会上架</li>
-    </ul>
-  </article>
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性强——头痛/经期是永恒刚需，非短期 fad。谁解决「保冷时长 + 久用不松脱」谁建壁垒。</div>
 
-  <article class="product-card reveal-section">
-    <div class="product-rank">🌍 全域 #3</div>
-    <a href="https://www.google.com/search?tbm=isch&q=HOVERAir+X1+self-flying+pocket+drone+follow+me+outdoor+adventure+creator+TikTok" target="_blank" class="product-image-wrap" title="点击搜索产品图片">🚁</a>
-    <div class="product-header">
-      <div><h3 class="product-name">掌上自飞无人机 / HOVERAir X1 Self-Flying Pocket Drone</h3><span class="product-category">全域爆款 · 消费电子·创作工具</span></div>
-    </div>
-    <div class="product-price">US: $299-$599（灰市）· EU: €299-€599（官方渠道）</div>
-    <div class="platform-badges">
-      <span class="platform-badge">🇺🇸 FCC禁令造成美国供需断裂 · Amazon二手溢价</span>
-      <span class="platform-badge">🇪🇺 50+国同步官方上市 · Red Dot Award 2026</span>
-    </div>
-    <div class="anomaly-callout">
-      🎯 全域信号：最强的全球信号是结构性的：美国FCC将中国产无人机列入禁售名单，HoverAir X1（中国Zero Zero Robotics出品）在美国市场面临渠道封锁，但在欧洲市场五月底同步在50+国正式上市，且AQUA新品发布刺激整个产品线需求。EU市场同时享有官方渠道+正规CE认证，形成对美国消费者的结构性溢价，以及对EU配件卖家的供应链机会。
-    </div>
-    <div class="biz-section">
-      <div class="biz-card"><div class="biz-card-label">机会评级</div><div class="opportunity-badge opp-must">🔥 必跟</div></div>
-      <div class="biz-card"><div class="biz-card-label">套利空间</div><div class="biz-card-value">EU配件生态毛利40-65%（官方无白牌限制）</div></div>
-      <div class="biz-card"><div class="biz-card-label">进入难度</div><div class="biz-card-value">中高（主机品牌封闭，配件/服务可进入）</div></div>
-      <div class="biz-card"><div class="biz-card-label">窗口期</div><div class="biz-card-value">12-24 个月（FCC禁令+AQUA产品线驱动）</div></div>
-    </div>
-    <ul class="tips-list">
-      <li>开发HoverAir X1专属配件生态：定制保护壳/滤镜组/多电池快充hub，在Amazon EU和HoverAir官方店旁挂靠销售</li>
-      <li>EU市场主打「户外徒步+自行车跟拍」场景，德奥瑞士户外运动人群是精准受众，配合当地Outdoor类KOL合作</li>
-      <li>搭建「HoverAir X1 US Alternative」内容矩阵，专门服务美国想购买但受限的消费者，导流至EU代购或配件服务</li>
-    </ul>
-  </article>
-</section>
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>卖点直接打「持久冰感 + 全遮光」，用计时演示视频证明 vs 竞品</li><li>凝胶配方做软冻型（冻后仍贴合），解决「冻太硬」第一差评</li><li>捆绑经期/产后场景做礼盒，拓宽 TAM 提客单价</li></ul>
+        </details>
+        
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.amazon.com/s?k=migraine+ice+head+wrap" target="_blank" rel="noopener">🛒 Amazon</a><a class="src" href="https://www.tiktok.com/search?q=migraine+ice+wrap" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=migraine+ice+head+wrap+cap+cold+therapy" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:120ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">🟥</span><span class="rank-tag">#3 US · 全域</span></div>
+          <div class="row-title">
+            <h3>LED 红光美容面罩 / LED Face Mask</h3>
+            <p class="cat">美容科技 · 个护</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=LED+red+light+therapy+face+mask+at+home" target="_blank" rel="noopener" aria-label="搜索 LED 红光美容面罩 / LED Face Mask 的产品图片"><span aria-hidden="true">🟥</span></a>
+        </header>
 
-<footer class="site-footer">
-  <p style="color:var(--text-muted);">
-    🤖 由 GitHub Actions + Claude 每日自动生成 · 数据来源：Amazon, TikTok, Temu, Shein, Reddit, Etsy 等<br>
-    上次更新：2026-05-31T21:36:57+08:00
-  </p>
-  <a href="archive.html" class="archive-link">📦 浏览历史捕获</a>
-</footer>
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">77<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">50-65% 毛利率</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">高（认证+波长品控）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">红海（激烈）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">$60 – $300</span></div>
+        </div>
+
+        <div class="tags"><span class="tag">📱 TikTok 美妆科技顶流</span><span class="tag">🛒 Amazon 美护榜</span><span class="tag">🇪🇺 欧洲同步热卖</span></div>
+
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>诊所级红/蓝光仪被压成家用面罩，靠「发光=高科技」的视觉冲击在短视频天然爆款。皮肤科背书（红光促胶原、蓝光抗痘）给了它区别于智商税的合法性，US+EU 同步增长。</p>
+
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">护肤圈整体认可 FDA 清关款值得投入：坚持 8-12 周有肤质/抗痘改善。核心抱怨是见效慢需耐心、高端款偏贵、不同品牌波长效果参差。功效真实但门槛在「坚持」。</p>
+          <div class="themes"><span class="theme">红光抗老</span><span class="theme">蓝光抗痘</span><span class="theme">居家便利</span><span class="theme">见效需耐心</span><span class="theme">波长参差</span></div>
+          <blockquote class="quote">Texture and breakouts genuinely improved after about 10 weeks of nightly use.<cite>— Reddit r/SkincareAddiction</cite></blockquote><blockquote class="quote">Cheaper masks have inconsistent wavelengths — you get what you pay for.<cite>— Reddit r/30PlusSkinCare</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 72%、中性 20%、负面 8%">
+            <span class="senti-bar"><i class="s-pos" style="width:72%"></i><i class="s-neu" style="width:20%"></i><i class="s-neg" style="width:8%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">72%</b> 正面 · 20% 中性 · <b class="s-neg-t">8%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：Reddit r/SkincareAddiction, r/30PlusSkinCare, 皮肤科评论</p>
+        </div>
+
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性强——美容科技长期赛道。但低质杂牌正在涌入，波长虚标会反噬。FDA/CE 清关 + 真实波长是护城河。</div>
+
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>拿 FDA/CE 清关 + 实测波长报告做信任背书，硬刚虚标杂牌</li><li>卖「方案」不卖「灯」：配 8-12 周打卡计划降低弃用率</li><li>欧盟需 CE + 护眼设计 + 多语言说明，宣称不得越界医疗</li></ul>
+        </details>
+        
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.amazon.com/s?k=led+face+mask+red+light+therapy" target="_blank" rel="noopener">🛒 Amazon</a><a class="src" href="https://www.tiktok.com/search?q=led+face+mask" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=LED+red+light+therapy+face+mask+at+home" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+  </section>
+  <section class="panel" id="panel-eu" role="tabpanel" aria-labelledby="tab-eu" hidden>
+    <article class="row reveal reveal-on row-hero" style="--delay:0ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">🧹</span><span class="rank-tag">#1 EU</span></div>
+          <div class="row-title">
+            <h3>迷你桌面吸尘器 / Mini Desktop Vacuum</h3>
+            <p class="cat">桌面好物 · 小家电</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=mini+desktop+vacuum+cleaner+keyboard+crumbs" target="_blank" rel="noopener" aria-label="搜索 迷你桌面吸尘器 / Mini Desktop Vacuum 的产品图片"><span aria-hidden="true">🧹</span></a>
+        </header>
+
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">81<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">55-70% 毛利率（贴牌）</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">低（现货充足）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">红海（激烈）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">€13 – €25</span></div>
+        </div>
+
+        <div class="tags"><span class="tag">🛒 Temu 月销 10万+</span><span class="tag">💶 €2-4 进货 €14-25 卖</span><span class="tag">📱 CleanTok 助推</span></div>
+
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>教科书级跨境套利单品：Temu €2-4 进货、贴牌后 €14-25 卖，月走 10 万+ 件。功能简单到极致却被 CleanTok「解压清洁」内容反复带火，居家办公人群刚需。</p>
+
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">学生/办公族认可它清键盘屑、橡皮屑确实顺手。最高频抱怨是吸力弱——超出轻碎屑就拉胯；其次电池续航、容量小要常倒。期望管理对了就满意，指望强力就翻车。</p>
+          <div class="themes"><span class="theme">桌面清洁</span><span class="theme">CleanTok 解压</span><span class="theme">吸力偏弱</span><span class="theme">居家办公</span><span class="theme">贴牌套利</span></div>
+          <blockquote class="quote">Perfect for eraser shavings and keyboard crumbs, useless for anything heavier.<cite>— Reddit r/gadgets</cite></blockquote><blockquote class="quote">Cute and works for light desk mess but you'll be emptying it constantly.<cite>— Reddit r/gadgets</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 58%、中性 27%、负面 15%">
+            <span class="senti-bar"><i class="s-pos" style="width:58%"></i><i class="s-neu" style="width:27%"></i><i class="s-neg" style="width:15%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">58%</b> 正面 · 27% 中性 · <b class="s-neg-t">15%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：Reddit r/gadgets, Temu 评价, TikTok CleanTok</p>
+        </div>
+
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性中——常青小需求但同质化严重、价格战激烈。靠颜值/套装/品牌叙事差异化，纯铺货必死。</div>
+
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>别拼价，拼颜值+场景套装（键盘+手工+车载三合一）做溢价</li><li>诚实标注「轻碎屑专用」，降低因吸力差评的退货率</li><li>欧盟需 CE + 多语言说明，USB-C 充电是基本盘</li></ul>
+        </details>
+        <p class="eu"><span class="eu-flag">🇪🇺 欧盟合规</span>需 CE 认证 + 德/法/意多语言说明书，USB-C 充电与电池需符合通用充电器指令</p>
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.amazon.de/s?k=mini+tisch+staubsauger" target="_blank" rel="noopener">🛒 Amazon DE</a><a class="src" href="https://www.tiktok.com/search?q=mini+desk+vacuum" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=mini+desktop+vacuum+cleaner+keyboard+crumbs" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:60ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">⌚</span><span class="rank-tag">#2 EU</span></div>
+          <div class="row-title">
+            <h3>机械轮盘把玩手表 / Roulette Mechanical Watch</h3>
+            <p class="cat">潮流配饰 · 机械玩物</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=roulette+mechanical+movement+watch+fidget+viral" target="_blank" rel="noopener" aria-label="搜索 机械轮盘把玩手表 / Roulette Mechanical Watch 的产品图片"><span aria-hidden="true">⌚</span></a>
+        </header>
+
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">76<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-wait">👀 观望</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">45-60% 毛利率</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">中（需要找厂）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">温和（有空间）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">€40 – €120</span></div>
+        </div>
+
+        <div class="tags"><span class="tag">📱 TikTok 把玩视频爆火</span><span class="tag">🛒 跨境独立站热卖</span><span class="tag">🎯 解压×潮酷双标签</span></div>
+
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>把「可旋转赌轮」塞进机械表盘——手表不再只看时间，而是戴在手腕上的解压玩具。fidget 解压 + 机械酷感跨界，视觉天生适合短视频把玩演示，潮流男性冲动消费强。</p>
+
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">讨论集中在「酷、能转着玩、拍出来好看」的情绪价值；潮流向买家把它当低价机械表入门和社交话题。需警惕的隐性痛点是廉价机芯走时与耐用性、轮盘转轴手感一致性——退货与差评高发区。</p>
+          <div class="themes"><span class="theme">腕上解压</span><span class="theme">机械酷感</span><span class="theme">短视频把玩</span><span class="theme">冲动消费</span><span class="theme">机芯品控</span></div>
+          <blockquote class="quote">Bought it purely because spinning the roulette on my wrist looks insane on camera.<cite>— TikTok 评论</cite></blockquote><blockquote class="quote">Fun gimmick but check the movement quality — cheap ones lose time fast.<cite>— 跨境测评</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 63%、中性 22%、负面 15%">
+            <span class="senti-bar"><i class="s-pos" style="width:63%"></i><i class="s-neu" style="width:22%"></i><i class="s-neg" style="width:15%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">63%</b> 正面 · 22% 中性 · <b class="s-neg-t">15%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：TikTok 评论, 跨境独立站测评, YouTube 开箱</p>
+        </div>
+
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性偏短——典型新奇 fad，热度窗口可能仅 1-3 个月。适合快进快出、内容驱动收割，不宜重备货。</div>
+
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>内容先行、轻库存：用把玩短视频测款，跑出来再补单</li><li>守住机芯品控底线，走时差是这品类最致命的差评源</li><li>捆绑「礼物 + 解压」叙事卖给潮流男性，节日是爆发点</li></ul>
+        </details>
+        <p class="eu"><span class="eu-flag">🇪🇺 欧盟合规</span>机械表配件需符合 CE 与 REACH（金属表带镍释放），随附多语言说明可降低退货</p>
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.aliexpress.com/wholesale?SearchText=roulette+mechanical+watch" target="_blank" rel="noopener">🛒 AliExpress</a><a class="src" href="https://www.tiktok.com/search?q=roulette+watch" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=roulette+mechanical+movement+watch+fidget+viral" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:120ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">💄</span><span class="rank-tag">#3 EU · 全域</span></div>
+          <div class="row-title">
+            <h3>变色腮红 / Color-Changing Blush</h3>
+            <p class="cat">功效彩妆 · 美妆个护</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=color+changing+blush+makeup+temu+viral" target="_blank" rel="noopener" aria-label="搜索 变色腮红 / Color-Changing Blush 的产品图片"><span aria-hidden="true">💄</span></a>
+        </header>
+
+        <div class="stats">
+          <div class="stat"><span class="stat-k">异常指数</span><span class="stat-v score">78<small>/100</small></span></div>
+          <div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div>
+          <div class="stat"><span class="stat-k">利润潜力</span><span class="stat-v">60-78% 毛利率</span></div>
+          <div class="stat"><span class="stat-k">供应链</span><span class="stat-v">低（现货充足）</span></div>
+          <div class="stat"><span class="stat-k">竞争密度</span><span class="stat-v">红海（激烈）</span></div>
+          <div class="stat price"><span class="stat-k">价格带</span><span class="stat-v">$6 – $18 / €6 – €16</span></div>
+        </div>
+
+        <div class="tags"><span class="tag">📱 TikTok 演示百万播放</span><span class="tag">🛒 Temu 爆款</span><span class="tag">🌐 US+EU 同步</span></div>
+
+        <p class="anomaly"><span class="anomaly-k">为什么是异常值</span>涂上遇体温/PH 变色的「魔法腮红」，把一支低价彩妆变成可拍的化学魔术。demo 视频天生病毒体质——「上脸一秒变色」即停留即转化，US 与 EU 同步起量，跨境复制几乎零成本。</p>
+
+        <div class="voc">
+          <h4>消费者在说什么</h4>
+          <p class="voc-sum">消费者爱的是「演示惊艳 + 价格友好 + 显色独一无二」的趣味与性价比；差评集中在显色因肤质而异、持久度一般、廉价款香精/质地拉胯。买的是 demo 带来的好奇与社交分享。</p>
+          <div class="themes"><span class="theme">变色魔术</span><span class="theme">demo 病毒体质</span><span class="theme">平价彩妆</span><span class="theme">显色因人而异</span><span class="theme">社交分享</span></div>
+          <blockquote class="quote">The color reaction on camera is why I bought it — pure impulse and only six bucks.<cite>— TikTok 评论</cite></blockquote><blockquote class="quote">Fun effect but it fades fast and the shade barely changed on my skin.<cite>— Amazon 评价</cite></blockquote>
+          <div class="senti" role="img" aria-label="情绪占比：正面 66%、中性 22%、负面 12%">
+            <span class="senti-bar"><i class="s-pos" style="width:66%"></i><i class="s-neu" style="width:22%"></i><i class="s-neg" style="width:12%"></i></span>
+            <span class="senti-key"><b class="s-pos-t">66%</b> 正面 · 22% 中性 · <b class="s-neg-t">12%</b> 负面</span>
+          </div>
+          <p class="srcline">来源：TikTok 评论, Temu/Amazon 评价</p>
+        </div>
+
+        <div class="trend"><span class="trend-k">趋势判断</span>持续性中——变色彩妆是反复回潮的内容型品类。靠 demo 内容矩阵+合规可长期吃，纯铺货同质化严重。</div>
+
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>把 demo 短视频做成内容矩阵，这是该品唯一核心获客引擎</li><li>诚实呈现「不同肤质不同色」，降预期落差与退货</li><li>欧盟必须 CPNP 化妆品备案 + 成分合规，廉价香精是合规雷区</li></ul>
+        </details>
+        <p class="eu"><span class="eu-flag">🇪🇺 欧盟合规</span>欧盟彩妆须 CPNP 备案 + 成分合规，标签需多语言，不得宣称医疗/护肤功效</p>
+        <div class="srcs"><span class="srcs-k">探索来源</span><a class="src" href="https://www.amazon.com/s?k=color+changing+blush" target="_blank" rel="noopener">🛒 Amazon</a><a class="src" href="https://www.tiktok.com/search?q=color+changing+blush" target="_blank" rel="noopener">📱 TikTok</a><a class="src" href="https://www.google.com/search?tbm=isch&q=color+changing+blush+makeup+temu+viral" target="_blank" rel="noopener">🖼️ 图片搜索</a></div>
+      </article>
+  </section>
+  <section class="panel" id="panel-global" role="tabpanel" aria-labelledby="tab-global" hidden>
+    <p class="panel-intro">以下产品在美国区和欧洲区同时出现异常增长信号，跨境套利潜力最强。</p>
+    <article class="row reveal reveal-on" style="--delay:0ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">💧</span><span class="rank-tag">🌍 全域 #1</span></div>
+          <div class="row-title">
+            <h3>氢水杯 / Hydrogen Water Bottle</h3>
+            <p class="cat">全域爆款 · 生物黑客</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=hydrogen+water+bottle+generator+portable" target="_blank" rel="noopener" aria-label="搜索 氢水杯 / Hydrogen Water Bottle 的产品图片"><span aria-hidden="true">💧</span></a>
+        </header>
+        <div class="tags"><span class="tag">🇺🇸 TikTok biohacking</span><span class="tag">🇪🇺 健康圈跟进</span><span class="tag">🌐 DTC 独立站</span></div>
+        <p class="anomaly"><span class="anomaly-k">全域信号</span>biohacking 是全球同频文化——从加州到柏林，氢水杯以相同链路传播（TikTok 科普/争议 → DTC 下单 → 晒单复传）。两地底层需求一致：在不确定里抓一个「我在认真养生」的确定感。</p>
+        <div class="stats"><div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-must">🔥 必跟</span></span></div><div class="stat"><span class="stat-k">套利空间</span><span class="stat-v">US→EU 溢价 15-25%</span></div><div class="stat"><span class="stat-k">进入难度</span><span class="stat-v">中（健康宣称合规）</span></div><div class="stat"><span class="stat-k">窗口期</span><span class="stat-v">6-12 个月</span></div></div>
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>US 主打「便携充电体验」，EU 叠加「可持续/无塑」叙事</li><li>两地都死守不宣称医疗功效，只卖仪式感与设计</li><li>网红 vlog 是跨境通用获客，内容可一套两地复用</li></ul>
+        </details>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:60ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">🟥</span><span class="rank-tag">🌍 全域 #2</span></div>
+          <div class="row-title">
+            <h3>LED 红光美容面罩 / LED Face Mask</h3>
+            <p class="cat">全域爆款 · 美容科技</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=LED+red+light+therapy+face+mask" target="_blank" rel="noopener" aria-label="搜索 LED 红光美容面罩 / LED Face Mask 的产品图片"><span aria-hidden="true">🟥</span></a>
+        </header>
+        <div class="tags"><span class="tag">📱 TikTok 美妆科技</span><span class="tag">🛒 Amazon US+EU</span><span class="tag">🎯 FDA/CE 双清关</span></div>
+        <p class="anomaly"><span class="anomaly-k">全域信号</span>美容科技无国界：红光抗老、蓝光抗痘的叙事在 US 与 EU 同步被接受，皮肤科背书给了跨境合法性。差异在监管与认证，谁双清关谁拿主流货架。</p>
+        <div class="stats"><div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div><div class="stat"><span class="stat-k">套利空间</span><span class="stat-v">US→EU 溢价 10-20%</span></div><div class="stat"><span class="stat-k">进入难度</span><span class="stat-v">高（FDA/CE 认证）</span></div><div class="stat"><span class="stat-k">窗口期</span><span class="stat-v">长期持续</span></div></div>
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>先拿 FDA + CE 双清关，认证就是这品类的入场券</li><li>用实测波长报告硬刚虚标杂牌，建立信任溢价</li><li>卖 8-12 周打卡方案而非硬件，压低弃用率提复购</li></ul>
+        </details>
+      </article>
+    <article class="row reveal reveal-on" style="--delay:120ms">
+        <header class="row-head">
+          <div class="rank"><span class="rank-emoji" aria-hidden="true">💄</span><span class="rank-tag">🌍 全域 #3</span></div>
+          <div class="row-title">
+            <h3>变色腮红 / Color-Changing Blush</h3>
+            <p class="cat">全域爆款 · 功效彩妆</p>
+          </div>
+          <a class="row-img" href="https://www.google.com/search?tbm=isch&q=color+changing+blush+makeup" target="_blank" rel="noopener" aria-label="搜索 变色腮红 / Color-Changing Blush 的产品图片"><span aria-hidden="true">💄</span></a>
+        </header>
+        <div class="tags"><span class="tag">📱 TikTok demo 百万播放</span><span class="tag">🛒 Temu 爆款</span><span class="tag">🌐 US+EU 同步</span></div>
+        <p class="anomaly"><span class="anomaly-k">全域信号</span>demo 型彩妆天生跨境：一秒变色的视觉魔术不需要翻译，US 与 EU 同步起量。铺货式复制成本极低，胜负手在内容矩阵与合规速度。</p>
+        <div class="stats"><div class="stat"><span class="stat-k">机会评级</span><span class="stat-v"><span class="opp opp-watch">⭐ 关注</span></span></div><div class="stat"><span class="stat-k">套利空间</span><span class="stat-v">US→EU 溢价 10-20%</span></div><div class="stat"><span class="stat-k">进入难度</span><span class="stat-v">低-中（CPNP 合规）</span></div><div class="stat"><span class="stat-k">窗口期</span><span class="stat-v">6-9 个月</span></div></div>
+        <details class="tips" open>
+          <summary>可执行建议</summary>
+          <ul><li>内容矩阵决定生死，demo 短视频要批量产、持续测</li><li>EU 先过 CPNP 备案再上架，成分合规不能省</li><li>两地都用「平价 + 趣味」定位收割冲动消费</li></ul>
+        </details>
+      </article>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <nav class="recent" id="recentDates" aria-label="最近日期"></nav>
+  <p style="margin-top:1.4rem">🤖 由 GitHub Actions + Claude 每日自动生成<br>数据来源：Amazon · TikTok · Temu · Shein · Reddit · Etsy 等 · 更新于 2026-05-31T09:02:00+08:00</p>
+  <a class="arch-link" href="archive.html">📦 浏览历史捕获</a>
+</div></footer>
 
 <script>
-!function(){
-  var d=document.getElementById('dateNavLinks');
-  if(!d)return;
-  var today='2026-05-31';
-  fetch('data/archive-index.json').then(function(r){return r.json()}).then(function(data){
-    var days=(data.days||[]).slice(0,7);
-    if(!days.length){d.innerHTML='<span style="color:var(--text-muted);font-size:0.8rem;">暂无历史</span>';return;}
+document.documentElement.classList.add('js');
+(function(){
+  // blind box (delight only — content already visible)
+  var box=document.getElementById('box');
+  if(box){box.addEventListener('click',function(){
+    var open=box.getAttribute('aria-pressed')==='true';
+    box.setAttribute('aria-pressed',String(!open));
+    var h=document.getElementById('boxHint'); if(h&&!open)h.textContent='🎉 今天的发现已揭晓';
+  });}
+
+  // tabs (roving, aria)
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function sel(t){
+    tabs.forEach(function(x){
+      var on=x===t; x.setAttribute('aria-selected',String(on)); x.tabIndex=on?0:-1;
+      var p=document.getElementById(x.getAttribute('aria-controls')); if(p)p.hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t);t.focus();});
+    t.addEventListener('keydown',function(e){
+      var j=i; if(e.key==='ArrowRight')j=(i+1)%tabs.length; else if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length; else return;
+      e.preventDefault(); sel(tabs[j]); tabs[j].focus();
+    });
+  });
+
+  // reveal on scroll — enhances already-visible content
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+    [].slice.call(document.querySelectorAll('.reveal-on')).forEach(function(el){io.observe(el);});
+  } else {
+    [].slice.call(document.querySelectorAll('.reveal-on')).forEach(function(el){el.classList.add('in');});
+  }
+
+  // recent dates
+  var rd=document.getElementById('recentDates');
+  if(rd){fetch('data/archive-index.json').then(function(r){return r.json()}).then(function(d){
+    var days=(d.days||[]).slice(0,7);
+    rd.innerHTML='<span class="recent-k">最近捕获</span>';
     days.forEach(function(day,i){
       var a=document.createElement('a');
       a.href='daily/'+day.date+'.html';
-      a.textContent=i===0?'📌 '+formatShort(day.date):formatShort(day.date);
-      a.style.cssText='padding:0.25rem 0.6rem;border-radius:14px;font-size:0.8rem;text-decoration:none;color:'+(i===0?'var(--accent)':'var(--text-secondary)')+';background:'+(i===0?'var(--accent-glow)':'var(--bg-card)')+';border:1px solid var(--border);white-space:nowrap;';
-      d.appendChild(a);
+      var p=day.date.split('-'); a.textContent=parseInt(p[1])+'/'+parseInt(p[2]);
+      if(i===0)a.className='today';
+      rd.appendChild(a);
     });
-    var more=document.createElement('a');
-    more.href='archive.html';more.textContent='…全部';
-    more.style.cssText='padding:0.25rem 0.6rem;border-radius:14px;font-size:0.8rem;text-decoration:none;color:var(--text-muted);border:1px solid var(--border);white-space:nowrap;';
-    d.appendChild(more);
-  }).catch(function(){});
-  function formatShort(dt){var p=dt.split('-');return parseInt(p[1])+'/'+parseInt(p[2]);}
-}();
-
-function switchTab(region) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
-  document.getElementById('tab' + region.charAt(0).toUpperCase() + region.slice(1)).classList.add('active');
-  var panel = document.getElementById('panel' + region.charAt(0).toUpperCase() + region.slice(1));
-  panel.style.display = 'block';
-  panel.classList.add('active');
-  setTimeout(function(){
-    panel.querySelectorAll('.reveal-section').forEach(function(el){ el.classList.add('visible'); });
-  }, 100);
-  window.scrollTo({ top: document.getElementById('tabNav').offsetTop - 20, behavior: 'smooth' });
-}
-
-function openBox() {
-  var box = document.getElementById('heroBox');
-  var label = document.getElementById('boxLabel');
-  if (box.classList.contains('opened')) return;
-  box.classList.add('opened');
-  label.textContent = '🎉 惊喜揭晓！';
-  setTimeout(function(){ label.style.opacity = '0'; }, 2000);
-  setTimeout(function(){
-    document.querySelectorAll('.reveal-section').forEach(function(el, i){
-      setTimeout(function(){ el.classList.add('visible'); }, i * 150);
-    });
-  }, 800);
-}
-
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    document.getElementById('loading').classList.add('hidden');
-  }, 600);
-});
-
-(function() {
-  var canvas = document.getElementById('particles');
-  var ctx = canvas.getContext('2d');
-  var particles = [];
-  var maxParticles = 40;
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-  function Particle() {
-    this.reset = function() {
-      this.x = Math.random() * canvas.width;
-      this.y = -10;
-      this.size = Math.random() * 2 + 0.5;
-      this.speed = Math.random() * 0.5 + 0.2;
-      this.opacity = Math.random() * 0.3 + 0.05;
-    };
-    this.reset();
-    this.y = Math.random() * canvas.height;
-    this.update = function() {
-      this.y += this.speed;
-      if (this.y > canvas.height + 10) this.reset();
-    };
-    this.draw = function() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,' + this.opacity + ')';
-      ctx.fill();
-    };
-  }
-  for (var i = 0; i < maxParticles; i++) particles.push(new Particle());
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(function(p){ p.update(); p.draw(); });
-    requestAnimationFrame(animate);
-  }
-  animate();
+    var m=document.createElement('a'); m.href='archive.html'; m.textContent='全部 →'; rd.appendChild(m);
+  }).catch(function(){});}
 })();
 </script>
 </body>
