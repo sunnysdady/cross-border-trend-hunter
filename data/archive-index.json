@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-05-31T21:36:57+08:00",
+  "updated_at": "2026-05-31T09:02:00+08:00",
   "total_days": 6,
   "days": [
     {
       "date": "2026-05-31",
-      "theme": "🔬 今天的爆款都在重写「物理规律」",
+      "theme": "🧪 今天的爆款都在帮你「修理自己」",
       "outliers_count": 6,
-      "top_product": "神秘饺子捏捏玩具 / Mystery Squishy Dumpling Blind Box",
-      "top_category": "玩具 · 解压/感官",
-      "cover_color": "#f97316"
+      "top_product": "氢水杯 / Hydrogen Water Bottle",
+      "top_category": "生物黑客 · 健康电器",
+      "cover_color": "#2dd4bf"
     },
     {
       "date": "2026-05-21",
