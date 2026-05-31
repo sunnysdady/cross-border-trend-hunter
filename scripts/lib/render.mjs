@@ -159,40 +159,44 @@ a{color:inherit}
 .topbar a.arch{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.4rem .7rem;border:1px solid var(--line);border-radius:.5rem;transition:border-color .2s,color .2s}
 .topbar a.arch:hover{color:var(--ink);border-color:var(--accent)}
 
-/* hero */
-.hero{padding:clamp(2.6rem,7vw,5rem) 0 clamp(1.4rem,3vw,2.2rem)}
+/* shell: left sticky sidebar + main content */
+.shell{max-width:78rem;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem);display:grid;grid-template-columns:15rem 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.side{position:sticky;top:72px;align-self:start;display:flex;flex-direction:column;gap:1.6rem;padding-top:clamp(2.2rem,5vw,3.4rem)}
+.side-block{display:flex;flex-direction:column;gap:.5rem}
+.side-h{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-left:.1rem}
+
+/* vertical region nav */
+.navtabs{display:flex;flex-direction:column;gap:.3rem;list-style:none}
+.tab{appearance:none;font:inherit;cursor:pointer;text-align:left;width:100%;background:transparent;color:var(--ink-2);border:1px solid transparent;border-radius:.6rem;padding:.5rem .75rem;font-size:.92rem;transition:color .2s,border-color .2s,background .2s}
+.tab:hover{color:var(--ink);background:var(--surface)}
+.tab[aria-selected="true"]{background:var(--surface-2);color:var(--ink);border-color:color-mix(in oklch,var(--accent) 45%,transparent);font-weight:600}
+.tab[aria-selected="true"]::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:.55rem;vertical-align:middle}
+.tab .tab-c{font-family:var(--mono);font-size:.74rem;color:var(--muted);float:right;margin-top:.15rem}
+
+/* recent captures (vertical) */
+.recent{display:flex;flex-direction:column;gap:.15rem}
+.recent a{display:flex;align-items:baseline;gap:.5rem;font-size:.84rem;color:var(--ink-2);text-decoration:none;font-family:var(--mono);padding:.35rem .55rem;border-radius:.5rem;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+.recent a:hover{color:var(--ink);background:var(--surface)}
+.recent a.today{color:var(--accent);border-color:color-mix(in oklch,var(--accent) 35%,transparent)}
+.recent a.today::before{content:"●";font-size:.6rem}
+.recent .all{color:var(--muted);margin-top:.2rem}
+.side-arch{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.5rem .75rem;border:1px solid var(--line);border-radius:.6rem;text-align:center;transition:color .2s,border-color .2s}
+.side-arch:hover{color:var(--accent);border-color:var(--accent)}
+
+/* hero (in main column) */
+.hero{padding:clamp(2.2rem,5vw,3.4rem) 0 1.2rem}
 .hero .date{font-family:var(--mono);font-size:.82rem;color:var(--muted);letter-spacing:.02em}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7vw,4.5rem);line-height:1.02;letter-spacing:-0.035em;margin:.5rem 0 .1rem;text-wrap:balance}
-.hero h1 .sub{display:block;font-size:.3em;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-top:.5rem;font-family:var(--mono)}
-.theme-line{font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--ink-2);max-width:46ch;margin:1.1rem 0 1.6rem;text-wrap:pretty}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.1rem,5.5vw,3.6rem);line-height:1.04;letter-spacing:-0.035em;margin:.5rem 0 .1rem;text-wrap:balance}
+.hero h1 .sub{display:block;font-size:.32em;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-top:.5rem;font-family:var(--mono)}
+.theme-line{font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--ink-2);max-width:52ch;margin:1.1rem 0 1.6rem;text-wrap:pretty}
 .theme-line .em{color:var(--accent);font-weight:600}
 
-/* blind box (kept as delight, NOT a visibility gate) */
-.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.box{appearance:none;background:none;border:0;cursor:pointer;perspective:700px;flex-shrink:0}
-.box-inner{position:relative;width:104px;height:104px;transition:transform .9s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d}
-.box[aria-pressed="true"] .box-inner{transform:rotateY(180deg)}
-.box-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surface)}
-.box-front{font-size:2.6rem}
-.box-back{transform:rotateY(180deg);background:var(--surface-2);border-color:var(--accent);gap:.15rem}
-.box-back .be{font-size:1.7rem}
-.box-back .bn{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:1rem}
-.box-back .bl{font-size:.66rem;color:var(--muted)}
-.box-hint{display:block;margin-top:.5rem;font-size:.7rem;color:var(--muted);font-family:var(--mono)}
-
-/* stat strip in hero */
-.kpis{display:flex;gap:0;border:1px solid var(--line);border-radius:.8rem;overflow:hidden;margin-top:.4rem}
+/* stat strip */
+.kpis{display:flex;gap:0;border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
 .kpi{flex:1;padding:.85rem 1rem;border-right:1px solid var(--line-2)}
 .kpi:last-child{border-right:0}
 .kpi b{display:block;font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--ink)}
 .kpi span{font-size:.72rem;color:var(--muted)}
-
-/* tabs */
-.tabs{position:sticky;top:56px;z-index:calc(var(--z-sticky) - 1);background:oklch(0.17 0.008 260 / 0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2);margin-top:1.4rem}
-.tabs .wrap{display:flex;gap:.4rem;padding-top:.6rem;padding-bottom:.6rem;overflow-x:auto}
-.tab{appearance:none;font:inherit;cursor:pointer;white-space:nowrap;background:transparent;color:var(--ink-2);border:1px solid var(--line);border-radius:2rem;padding:.45rem 1.1rem;font-size:.88rem;transition:color .2s,border-color .2s,background .2s}
-.tab:hover{color:var(--ink);border-color:var(--accent)}
-.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
 
 /* panels */
 .panel{padding:clamp(1.6rem,4vw,2.6rem) 0 1rem}
@@ -270,15 +274,6 @@ a{color:inherit}
 /* footer */
 .foot{border-top:1px solid var(--line-2);margin-top:2rem;padding:2.4rem 0 3rem;text-align:center;color:var(--muted);font-size:.8rem;line-height:1.8}
 .foot a{color:var(--accent);text-decoration:none}
-.foot .arch-link{display:inline-block;margin-top:1rem;padding:.55rem 1.3rem;border:1px solid var(--accent);border-radius:.6rem;color:var(--accent);text-decoration:none;font-size:.85rem;transition:background .2s,color .2s}
-.foot .arch-link:hover{background:var(--accent);color:var(--on-accent)}
-
-/* recent dates */
-.recent{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center}
-.recent-k{font-size:.74rem;color:var(--muted);font-family:var(--mono)}
-.recent a{font-size:.76rem;color:var(--ink-2);text-decoration:none;font-family:var(--mono);border:1px solid var(--line);border-radius:.4rem;padding:.2rem .5rem;transition:color .2s,border-color .2s}
-.recent a:hover{color:var(--accent);border-color:var(--accent)}
-.recent a.today{color:var(--accent);border-color:var(--accent)}
 
 /* reveal — content visible by default; enhance only when motion allowed */
 @media (prefers-reduced-motion:no-preference){
@@ -288,16 +283,26 @@ a{color:inherit}
 }
 @keyframes rise{to{opacity:1;transform:none}}
 
+/* collapse sidebar → single column; region nav becomes a sticky horizontal bar */
+@media (max-width:880px){
+  .shell{grid-template-columns:1fr;gap:0}
+  .side{position:static;top:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem;padding-top:0}
+  .side .side-block.recent-block{display:none}
+  .side .side-h{display:none}
+  .side-arch{margin-left:auto}
+  .navtabs{position:sticky;top:56px;z-index:calc(var(--z-sticky) - 1);flex-direction:row;gap:.4rem;width:100%;overflow-x:auto;background:oklch(0.17 0.008 260 / 0.9);backdrop-filter:blur(10px);padding:.7rem 0;margin:0 -.2rem}
+  .tab{width:auto;white-space:nowrap;border:1px solid var(--line);border-radius:2rem;padding:.45rem 1rem}
+  .tab[aria-selected="true"]::before{display:none}
+  .tab .tab-c{display:none}
+}
 @media (max-width:720px){
   .row-head{grid-template-columns:auto 1fr;grid-template-areas:"rank title" "img img"}
   .row-img{display:none}
-  .kpis{flex-direction:row}
   .kpi{padding:.7rem .6rem}
   .kpi b{font-size:1.2rem}
 }
 @media (max-width:520px){
   .stat{flex:1 1 100%}
-  .hero-top{gap:1rem}
 }
 `;
 }
@@ -306,14 +311,6 @@ function script(date) {
   return `
 document.documentElement.classList.add('js');
 (function(){
-  // blind box (delight only — content already visible)
-  var box=document.getElementById('box');
-  if(box){box.addEventListener('click',function(){
-    var open=box.getAttribute('aria-pressed')==='true';
-    box.setAttribute('aria-pressed',String(!open));
-    var h=document.getElementById('boxHint'); if(h&&!open)h.textContent='🎉 今天的发现已揭晓';
-  });}
-
   // tabs (roving, aria)
   var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
   function sel(t){
@@ -338,19 +335,21 @@ document.documentElement.classList.add('js');
     [].slice.call(document.querySelectorAll('.reveal-on')).forEach(function(el){el.classList.add('in');});
   }
 
-  // recent dates
+  // recent dates (vertical sidebar list)
   var rd=document.getElementById('recentDates');
   if(rd){fetch('data/archive-index.json').then(function(r){return r.json()}).then(function(d){
     var days=(d.days||[]).slice(0,7);
-    rd.innerHTML='<span class="recent-k">最近捕获</span>';
+    rd.innerHTML='';
     days.forEach(function(day,i){
       var a=document.createElement('a');
       a.href='daily/'+day.date+'.html';
-      var p=day.date.split('-'); a.textContent=parseInt(p[1])+'/'+parseInt(p[2]);
+      var p=day.date.split('-');
+      a.innerHTML='<span>'+parseInt(p[1])+'/'+parseInt(p[2])+'</span>';
+      if(day.theme){a.title=day.theme;}
       if(i===0)a.className='today';
       rd.appendChild(a);
     });
-    var m=document.createElement('a'); m.href='archive.html'; m.textContent='全部 →'; rd.appendChild(m);
+    var m=document.createElement('a'); m.href='archive.html'; m.className='all'; m.textContent='全部 →'; rd.appendChild(m);
   }).catch(function(){});}
 })();
 `;
@@ -393,55 +392,52 @@ export function renderPage(_root, data) {
   <a class="arch" href="archive.html">历史捕获 →</a>
 </div></div>
 
-<header class="hero"><div class="wrap">
-  <div class="hero-top">
-    <div>
+<div class="shell">
+  <aside class="side" aria-label="侧边导航">
+    <nav class="side-block" aria-label="区域切换">
+      <span class="side-h">区域</span>
+      <div class="navtabs" role="tablist">
+        <button class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true" tabindex="0">🇺🇸 美国区<span class="tab-c">${us.length}</span></button>
+        <button class="tab" role="tab" id="tab-eu" aria-controls="panel-eu" aria-selected="false" tabindex="-1">🇪🇺 欧洲区<span class="tab-c">${eu.length}</span></button>
+        <button class="tab" role="tab" id="tab-global" aria-controls="panel-global" aria-selected="false" tabindex="-1">🌍 全域爆款<span class="tab-c">${(data.global_products || []).length}</span></button>
+      </div>
+    </nav>
+    <div class="side-block recent-block">
+      <span class="side-h">最近捕获</span>
+      <nav class="recent" id="recentDates" aria-label="最近日期"></nav>
+    </div>
+    <a class="side-arch" href="archive.html">📦 全部历史</a>
+  </aside>
+
+  <div class="maincol">
+    <header class="hero">
       <p class="date">${esc(data.date_cn)}</p>
       <h1>今日异常爆款<span class="sub">每日全球电商趋势情报</span></h1>
       <p class="theme-line">${themeHtml}</p>
-    </div>
-    <button class="box" id="box" type="button" aria-pressed="false" aria-label="开盲盒，查看今日发现">
-      <span class="box-inner">
-        <span class="box-face box-front" aria-hidden="true">🎁</span>
-        <span class="box-face box-back">
-          <span class="be" aria-hidden="true">${esc(data.hero_emoji)}</span>
-          <span class="bn">${esc(s.outliers)} 个</span>
-          <span class="bl">今日爆款</span>
-        </span>
-      </span>
-      <span class="box-hint" id="boxHint">点我开盲盒</span>
-    </button>
-  </div>
-  <div class="kpis reveal reveal-on" aria-label="今日数据概览">
-    <div class="kpi"><b>${esc(s.scanned)}</b><span>扫描商品</span></div>
-    <div class="kpi"><b>${esc(s.outliers)}</b><span>异常爆款</span></div>
-    <div class="kpi"><b>${esc(s.platforms)}</b><span>覆盖平台</span></div>
-  </div>
-</div></header>
+      <div class="kpis reveal reveal-on" aria-label="今日数据概览">
+        <div class="kpi"><b>${esc(s.scanned)}</b><span>扫描商品</span></div>
+        <div class="kpi"><b>${esc(s.outliers)}</b><span>异常爆款</span></div>
+        <div class="kpi"><b>${esc(s.platforms)}</b><span>覆盖平台</span></div>
+      </div>
+    </header>
 
-<nav class="tabs" aria-label="区域切换"><div class="wrap" role="tablist">
-  <button class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true" tabindex="0">🇺🇸 美国区</button>
-  <button class="tab" role="tab" id="tab-eu" aria-controls="panel-eu" aria-selected="false" tabindex="-1">🇪🇺 欧洲区</button>
-  <button class="tab" role="tab" id="tab-global" aria-controls="panel-global" aria-selected="false" tabindex="-1">🌍 全域爆款</button>
-</div></nav>
-
-<main id="main" class="wrap">
-  <section class="panel" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
-${usHtml.split("\n").map(l => l ? "    " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
-  </section>
-  <section class="panel" id="panel-eu" role="tabpanel" aria-labelledby="tab-eu" hidden>
-${euHtml.split("\n").map(l => l ? "    " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
-  </section>
-  <section class="panel" id="panel-global" role="tabpanel" aria-labelledby="tab-global" hidden>
-    <p class="panel-intro">以下产品在美国区和欧洲区同时出现异常增长信号，跨境套利潜力最强。</p>
-${globHtml.split("\n").map(l => l ? "    " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
-  </section>
-</main>
+    <main id="main">
+      <section class="panel" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
+${usHtml.split("\n").map(l => l ? "        " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
+      </section>
+      <section class="panel" id="panel-eu" role="tabpanel" aria-labelledby="tab-eu" hidden>
+${euHtml.split("\n").map(l => l ? "        " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
+      </section>
+      <section class="panel" id="panel-global" role="tabpanel" aria-labelledby="tab-global" hidden>
+        <p class="panel-intro">以下产品在美国区和欧洲区同时出现异常增长信号，跨境套利潜力最强。</p>
+${globHtml.split("\n").map(l => l ? "        " + l : l).join("\n").replace(/<article class="row/g, '<article class="row reveal reveal-on')}
+      </section>
+    </main>
+  </div>
+</div>
 
 <footer class="foot"><div class="wrap">
-  <nav class="recent" id="recentDates" aria-label="最近日期"></nav>
-  <p style="margin-top:1.4rem">🤖 由 GitHub Actions + Claude 每日自动生成<br>数据来源：Amazon · TikTok · Temu · Shein · Reddit · Etsy 等 · 更新于 ${esc(data.generated_at)}</p>
-  <a class="arch-link" href="archive.html">📦 浏览历史捕获</a>
+  <p>🤖 由 GitHub Actions + Claude 每日自动生成<br>数据来源：Amazon · TikTok · Temu · Shein · Reddit · Etsy 等 · 更新于 ${esc(data.generated_at)}</p>
 </div></footer>
 
 <script>${script(data.date)}</script>
