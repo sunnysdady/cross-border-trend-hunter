@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-05-31T09:02:00+08:00",
-  "total_days": 6,
+  "updated_at": "2026-06-01T14:05:41+08:00",
+  "total_days": 7,
   "days": [
+    {
+      "date": "2026-06-01",
+      "theme": "🪤 今天的爆款都在帮你掌控世界",
+      "outliers_count": 6,
+      "top_product": "牛皮纹凉鞋 / Cowhide Pattern Sandals",
+      "top_category": "时尚鞋履 · TikTok爆款",
+      "cover_color": "#f97316"
+    },
     {
       "date": "2026-05-31",
       "theme": "🧪 今天的爆款都在帮你「修理自己」",
