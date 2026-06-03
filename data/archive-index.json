@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-01T14:05:41+08:00",
-  "total_days": 7,
+  "updated_at": "2026-06-03T14:05:27+08:00",
+  "total_days": 8,
   "days": [
+    {
+      "date": "2026-06-03",
+      "theme": "🧵 今天的爆款都在帮你「把手工感装回生活」",
+      "outliers_count": 6,
+      "top_product": "便携式无墨热敏打印机 / Portable Inkless Thermal Printer",
+      "top_category": "文具科技 · 家居办公",
+      "cover_color": "#a3e635"
+    },
     {
       "date": "2026-06-01",
       "theme": "🪤 今天的爆款都在帮你掌控世界",
