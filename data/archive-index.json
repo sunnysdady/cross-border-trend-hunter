@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-03T14:05:27+08:00",
-  "total_days": 8,
+  "updated_at": "2026-06-04T13:58:26+08:00",
+  "total_days": 9,
   "days": [
+    {
+      "date": "2026-06-04",
+      "theme": "🫧 今天的爆款都在重新定义边界",
+      "outliers_count": 6,
+      "top_product": "睡眠封口贴 / Mouth Tape for Sleep",
+      "top_category": "健康睡眠 · 生物黑客",
+      "cover_color": "#c084fc"
+    },
     {
       "date": "2026-06-03",
       "theme": "🧵 今天的爆款都在帮你「把手工感装回生活」",
