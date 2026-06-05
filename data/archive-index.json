@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-04T13:58:26+08:00",
-  "total_days": 9,
+  "updated_at": "2026-06-05T13:20:14+08:00",
+  "total_days": 10,
   "days": [
+    {
+      "date": "2026-06-05",
+      "theme": "🌌 今天的爆款都在重新设计身体的操作系统",
+      "outliers_count": 6,
+      "top_product": "睡眠口腔贴 / Mouth Tape Sleep Strips",
+      "top_category": "睡眠健康 · 生物黑客",
+      "cover_color": "#60a5fa"
+    },
     {
       "date": "2026-06-04",
       "theme": "🫧 今天的爆款都在重新定义边界",
