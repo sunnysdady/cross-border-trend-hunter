@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-05T13:20:14+08:00",
-  "total_days": 10,
+  "updated_at": "2026-06-06T12:55:01+08:00",
+  "total_days": 11,
   "days": [
+    {
+      "date": "2026-06-06",
+      "theme": "🫀 今天的爆款都在把存在感变成实体",
+      "outliers_count": 6,
+      "top_product": "神秘饺子捏捏盲盒 / Mystery Dumpling Squishy Blind Box",
+      "top_category": "感官玩具 · 盲盒收藏",
+      "cover_color": "#e040fb"
+    },
     {
       "date": "2026-06-05",
       "theme": "🌌 今天的爆款都在重新设计身体的操作系统",
