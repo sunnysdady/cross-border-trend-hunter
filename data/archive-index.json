@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-06T12:55:01+08:00",
-  "total_days": 11,
+  "updated_at": "2026-06-07T13:23:23+08:00",
+  "total_days": 12,
   "days": [
+    {
+      "date": "2026-06-07",
+      "theme": "🌧️ 今天的爆款都在把「无用之美」卖成刚需",
+      "outliers_count": 6,
+      "top_product": "雨云加湿器 / Rain Cloud Humidifier",
+      "top_category": "家居氛围 · 情绪装置",
+      "cover_color": "#f59e0b"
+    },
     {
       "date": "2026-06-06",
       "theme": "🫀 今天的爆款都在把存在感变成实体",
