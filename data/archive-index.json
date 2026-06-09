@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-07T13:23:23+08:00",
-  "total_days": 12,
+  "updated_at": "2026-06-09T13:08:51+08:00",
+  "total_days": 13,
   "days": [
+    {
+      "date": "2026-06-09",
+      "theme": "🏟️ 今天的爆款都在把「一次性历史时刻」变成消费锚点",
+      "outliers_count": 6,
+      "top_product": "美国250周年纪念挑战金章 / USA 250th Anniversary Commemorative Coin",
+      "top_category": "爱国收藏品 · 礼品",
+      "cover_color": "#f97316"
+    },
     {
       "date": "2026-06-07",
       "theme": "🌧️ 今天的爆款都在把「无用之美」卖成刚需",
