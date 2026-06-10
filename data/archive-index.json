@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-09T13:08:51+08:00",
-  "total_days": 13,
+  "updated_at": "2026-06-10T13:21:30+08:00",
+  "total_days": 14,
   "days": [
+    {
+      "date": "2026-06-10",
+      "theme": "🧬 今天的爆款都在把「自我调试」变成可消费的硬件",
+      "outliers_count": 6,
+      "top_product": "睡眠口贴 / Sleep Mouth Tape",
+      "top_category": "健康优化 · Sleepmaxxing 周边",
+      "cover_color": "#fb7185"
+    },
     {
       "date": "2026-06-09",
       "theme": "🏟️ 今天的爆款都在把「一次性历史时刻」变成消费锚点",
