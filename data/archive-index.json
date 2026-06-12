@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-06-10T13:21:30+08:00",
-  "total_days": 14,
+  "updated_at": "2026-06-12T13:50:58+08:00",
+  "total_days": 15,
   "days": [
+    {
+      "date": "2026-06-12",
+      "theme": "🌀 今天的爆款都在把「身体的无意识习惯」变成可量化的生意",
+      "outliers_count": 6,
+      "top_product": "智能姿势矫正传感器 / Smart Posture Corrector Wearable",
+      "top_category": "健康穿戴 · 人体工学",
+      "cover_color": "#f97316"
+    },
     {
       "date": "2026-06-10",
       "theme": "🧬 今天的爆款都在把「自我调试」变成可消费的硬件",
