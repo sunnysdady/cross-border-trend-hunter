@@ -1,9 +1,6 @@
 name: Daily Trend Generation
 
 on:
-  schedule:
-    # 01:00 UTC = 09:00 Asia/Shanghai. GitHub cron 可能延迟几分钟到半小时，属正常。
-    - cron: "0 1 * * *"
   workflow_dispatch: {}   # 允许在 Actions 页面手动点 "Run workflow" 立即生成
 
 permissions:
